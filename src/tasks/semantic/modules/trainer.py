@@ -18,7 +18,9 @@ import os
 import numpy as np
 from matplotlib import pyplot as plt
 import random
+
 from common.logger import Logger
+
 from common.avgmeter import *
 from common.sync_batchnorm.batchnorm import convert_model
 from common.warmupLR import *

@@ -11,19 +11,22 @@ import shutil
 import __init__ as booger
 
 from tasks.semantic.modules.trainer import *
-
+import os; os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
+#在!!fix前不能运行
 if __name__ == '__main__':
   parser = argparse.ArgumentParser("./train.py")
   parser.add_argument(
       '--dataset', '-d',
       type=str,
-      required=True,
+      default='/home/zht/Datasets/Semantic',
+      #required=True,
       help='Dataset to train with. No Default',
   )
-  parser.add_argument(
+  parser.add_argument( 
       '--arch_cfg', '-ac',
       type=str,
-      required=True,
+      #required=True,
+      default='/home/zht/github_play/SqueezeSegV3/src/tasks/semantic/config/arch/SSGV353.yaml',
       help='Architecture yaml cfg file. See /config/arch for sample. No default!',
   )
   parser.add_argument(
@@ -107,6 +110,6 @@ if __name__ == '__main__':
     print("Error copying files, check permissions. Exiting...")
     quit()
 
-  # create trainer and start the training
+  # # create trainer and start the training
   trainer = Trainer(ARCH, DATA, FLAGS.dataset, FLAGS.log, FLAGS.pretrained)
   trainer.train()
