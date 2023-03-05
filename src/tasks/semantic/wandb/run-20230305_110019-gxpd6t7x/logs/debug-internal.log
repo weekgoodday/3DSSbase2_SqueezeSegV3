@@ -4993,3 +4993,519 @@
 2023-03-05 12:11:22,144 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
 2023-03-05 12:11:22,181 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
 2023-03-05 12:11:23,252 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:11:24,182 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:11:26,183 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:11:27,235 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:11:28,183 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:11:28,253 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:11:30,184 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:11:32,184 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:11:32,349 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:11:33,254 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:11:34,185 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:11:36,186 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:11:37,444 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:11:38,186 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:11:38,255 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:11:40,187 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:11:42,187 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:11:42,555 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:11:43,256 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:11:44,188 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:11:46,189 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:11:47,629 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:11:48,189 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:11:48,257 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:11:50,190 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:11:50,478 DEBUG   SenderThread:12577 [sender.py:send():336] send: stats
+2023-03-05 12:11:52,191 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:11:52,730 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:11:53,258 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:11:54,191 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:11:56,192 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:11:57,847 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:11:58,192 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:11:58,258 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:12:00,193 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:02,193 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:02,978 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:12:03,259 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:12:04,194 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:06,194 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:08,127 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:12:08,195 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:08,260 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:12:10,195 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:12,196 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:13,219 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:12:13,261 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:12:14,196 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:16,197 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:18,197 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:18,262 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:12:18,332 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:12:20,198 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:20,479 DEBUG   SenderThread:12577 [sender.py:send():336] send: stats
+2023-03-05 12:12:22,199 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:23,263 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:12:23,442 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:12:24,200 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:26,200 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:28,201 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:28,264 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:12:28,560 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:12:30,201 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:32,202 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:33,267 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:12:33,669 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:12:34,203 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:36,204 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:38,204 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:38,268 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:12:38,798 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:12:40,205 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:42,205 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:43,269 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:12:43,871 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:12:44,206 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:46,207 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:48,208 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:48,269 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:12:49,020 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:12:50,208 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:50,524 DEBUG   SenderThread:12577 [sender.py:send():336] send: stats
+2023-03-05 12:12:52,209 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:53,270 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:12:54,123 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:12:54,209 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:56,210 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:58,210 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:12:58,271 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:12:59,220 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:13:00,211 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:02,212 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:03,272 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:13:04,213 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:04,320 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:13:06,213 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:08,213 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:08,273 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:13:09,433 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:13:10,214 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:12,215 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:13,274 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:13:14,215 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:14,533 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:13:16,216 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:18,216 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:18,274 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:13:19,624 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:13:20,217 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:20,481 DEBUG   SenderThread:12577 [sender.py:send():336] send: stats
+2023-03-05 12:13:22,218 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:23,275 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:13:24,219 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:24,737 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:13:26,219 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:28,220 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:28,276 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:13:29,845 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:13:30,221 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:32,221 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:33,276 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:13:34,222 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:34,974 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:13:36,222 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:38,223 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:38,280 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:13:40,131 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:13:40,223 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:42,224 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:43,283 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:13:44,225 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:45,240 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:13:46,225 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:48,226 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:48,284 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:13:50,227 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:50,349 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:13:50,481 DEBUG   SenderThread:12577 [sender.py:send():336] send: stats
+2023-03-05 12:13:52,228 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:53,285 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:13:54,228 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:55,411 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:13:56,229 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:58,229 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:13:58,285 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:14:00,230 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:00,512 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:14:02,230 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:03,287 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:14:04,231 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:05,626 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:14:06,231 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:08,232 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:08,287 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:14:10,232 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:10,736 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:14:12,233 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:13,288 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:14:14,234 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:15,856 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:14:16,234 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:18,235 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:18,289 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:14:20,235 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:20,482 DEBUG   SenderThread:12577 [sender.py:send():336] send: stats
+2023-03-05 12:14:20,981 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:14:22,236 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:23,289 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:14:24,236 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:26,086 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:14:26,237 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:28,237 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:28,290 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:14:30,238 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:31,158 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:14:32,238 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:33,291 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:14:34,239 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:36,240 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:36,289 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:14:38,240 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:38,291 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:14:40,241 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:41,418 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:14:42,241 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:43,292 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:14:44,242 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:46,242 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:46,549 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:14:48,243 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:48,293 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:14:50,244 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:50,483 DEBUG   SenderThread:12577 [sender.py:send():336] send: stats
+2023-03-05 12:14:51,669 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:14:52,244 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:53,371 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:14:54,245 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:56,245 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:56,767 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:14:58,246 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:14:58,372 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:15:00,247 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:01,892 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:15:02,247 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:03,373 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:15:04,248 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:06,249 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:07,009 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:15:08,249 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:08,374 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:15:10,250 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:12,171 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:15:12,250 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:13,374 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:15:14,251 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:16,251 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:17,270 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:15:18,252 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:18,375 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:15:20,252 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:20,483 DEBUG   SenderThread:12577 [sender.py:send():336] send: stats
+2023-03-05 12:15:22,253 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:22,404 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:15:23,376 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:15:24,253 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:26,254 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:27,471 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:15:28,254 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:28,378 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:15:30,255 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:32,255 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:32,607 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:15:33,378 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:15:34,256 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:36,256 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:37,697 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:15:38,257 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:38,379 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:15:40,258 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:42,258 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:42,812 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:15:43,380 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:15:44,259 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:46,259 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:47,956 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:15:48,260 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:48,381 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:15:50,261 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:50,484 DEBUG   SenderThread:12577 [sender.py:send():336] send: stats
+2023-03-05 12:15:52,261 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:53,146 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:15:53,382 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:15:54,262 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:56,262 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:58,230 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:15:58,263 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:15:58,385 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:16:00,264 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:02,265 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:03,321 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:16:03,386 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:16:04,265 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:06,266 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:08,266 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:08,387 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:16:08,420 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:16:10,267 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:12,268 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:13,389 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:16:13,500 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:16:14,268 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:16,269 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:18,269 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:18,390 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:16:18,621 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:16:20,270 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:20,485 DEBUG   SenderThread:12577 [sender.py:send():336] send: stats
+2023-03-05 12:16:22,270 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:23,390 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:16:23,701 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:16:24,271 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:26,271 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:28,272 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:28,391 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:16:28,838 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:16:30,272 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:32,273 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:33,392 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:16:33,944 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:16:34,274 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:36,274 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:38,275 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:38,393 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:16:39,038 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:16:40,275 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:42,276 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:43,394 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:16:44,154 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:16:44,276 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:46,277 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:48,277 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:48,394 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:16:49,249 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:16:50,278 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:50,486 DEBUG   SenderThread:12577 [sender.py:send():336] send: stats
+2023-03-05 12:16:52,278 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:53,395 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:16:54,279 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:54,371 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:16:56,279 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:58,280 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:16:58,396 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:16:59,476 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:17:00,280 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:02,281 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:03,397 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:17:04,281 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:04,618 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:17:06,282 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:08,282 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:08,397 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:17:09,770 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:17:10,283 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:12,283 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:13,398 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:17:14,211 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,212 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,212 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,212 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,213 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,213 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,213 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,214 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,214 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,214 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,215 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,215 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,215 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,216 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,216 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,216 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,217 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,217 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,217 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,218 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,218 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,218 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,219 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,219 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,219 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,231 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,231 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,231 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,232 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,232 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,232 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,232 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,232 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,232 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,232 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,232 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,232 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,232 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,232 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,232 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,233 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,233 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,233 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,233 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,233 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,233 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,233 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,233 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,233 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,234 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,234 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,234 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,234 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,234 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,234 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,234 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,234 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,234 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,234 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,235 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,235 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,235 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,235 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,235 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,235 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,235 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,235 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,236 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,236 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,236 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,236 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,236 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,236 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,236 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,236 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,237 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,237 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,237 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,237 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,238 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,238 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,238 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,239 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,239 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,239 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,240 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,240 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,240 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,241 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,241 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,241 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,242 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,242 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,242 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,243 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,243 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,243 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,244 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,244 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,245 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,245 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,245 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,246 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,246 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,246 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,247 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,247 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,247 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,248 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,248 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,248 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,249 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,249 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,249 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,250 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,250 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,250 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,251 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,251 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,251 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,252 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,252 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,252 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,253 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,253 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,253 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,254 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,254 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,254 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,255 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,255 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,255 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,284 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:14,300 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,300 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,300 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,300 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,300 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,300 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,300 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,300 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,300 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,300 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,300 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,300 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,301 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,301 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,301 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,301 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,301 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,301 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,301 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,301 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,301 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,301 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,301 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,301 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-05 12:17:14,903 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:17:16,285 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:18,286 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:18,399 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:17:19,996 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:17:20,286 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:20,486 DEBUG   SenderThread:12577 [sender.py:send():336] send: stats
+2023-03-05 12:17:22,287 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:23,400 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:17:24,287 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:25,113 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:17:26,288 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:28,289 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:28,401 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:17:30,260 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:17:30,289 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:32,290 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:33,406 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:17:34,291 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:35,365 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:17:36,291 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:38,291 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:38,407 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:17:40,292 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:40,493 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:17:42,293 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:43,408 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:17:44,294 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:45,680 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
+2023-03-05 12:17:46,294 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:48,295 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:48,409 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-05 12:17:50,296 INFO    Thread-13 :12577 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/zht/github_play/SqueezeSegV3/src/tasks/semantic/wandb/run-20230305_110019-gxpd6t7x/files/output.log
+2023-03-05 12:17:50,487 DEBUG   SenderThread:12577 [sender.py:send():336] send: stats
+2023-03-05 12:17:50,812 DEBUG   HandlerThread:12577 [handler.py:handle_request():144] handle_request: status_report
