@@ -1,0 +1,72 @@
+20
+20
+Sequences folder exists! Using sequences from /home/zht/Datasets/Semantic
+parsing seq 00
+parsing seq 01
+parsing seq 02
+parsing seq 03
+parsing seq 04
+parsing seq 05
+parsing seq 06
+parsing seq 07
+Using 16338 scans from sequences [0, 1, 2, 3, 4, 5, 6, 7]
+20
+Sequences folder exists! Using sequences from /home/zht/Datasets/Semantic
+parsing seq 08
+Using 4070 scans from sequences [8]
+Loss weights from content:  tensor([  0.0000,  22.9317, 857.5627, 715.1100, 315.9618, 356.2452, 747.6170,
+        887.2239, 963.8915,   5.0051,  63.6247,   6.9002, 203.8796,   7.4802,
+         13.6315,   3.7339, 142.1462,  12.6355, 259.3699, 618.9667])
+Using squeezesegv321 Backbone
+Depth of backbone input =  5
+Original OS:  8
+New OS:  8
+Strides:  [2, 2, 2, 1, 1]
+/home/zht/anaconda3/envs/py37tensor/lib/python3.7/site-packages/torch/nn/functional.py:1806: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/home/zht/anaconda3/envs/py37tensor/lib/python3.7/site-packages/torch/nn/functional.py:3847: UserWarning: nn.functional.upsample_bilinear is deprecated. Use nn.functional.interpolate instead.
+  warnings.warn("nn.functional.upsample_bilinear is deprecated. Use nn.functional.interpolate instead.")
+/home/zht/anaconda3/envs/py37tensor/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:134: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+Decoder original OS:  8
+Decoder new OS:  8
+Decoder strides:  [1, 1, 2, 2, 2]
+Total number of parameters:  9247140
+Total number of parameters requires_grad:  9247140
+Param encoder  6129120
+Param decoder  3098080
+Param head  19940
+No path to pretrained, using random init.
+Training in device:  cuda
+Let's use 2 GPUs!
+Ignoring class  0  in IoU evaluation
+[IOU EVAL] IGNORE:  tensor([0])
+[IOU EVAL] INCLUDE:  tensor([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+        19])
+/home/zht/anaconda3/envs/py37tensor/lib/python3.7/site-packages/torch/nn/functional.py:3509: UserWarning: nn.functional.upsample is deprecated. Use nn.functional.interpolate instead.
+  warnings.warn("nn.functional.upsample is deprecated. Use nn.functional.interpolate instead.")
+Traceback (most recent call last):
+  File "train.py", line 119, in <module>
+    trainer.train()
+  File "../../tasks/semantic/modules/trainer.py", line 244, in train
+    show_scans=self.ARCH["train"]["show_scans"])
+  File "../../tasks/semantic/modules/trainer.py", line 334, in train_epoch
+    [output, z2, z3, z4, z5] = model(in_vol, proj_mask)
+  File "/home/zht/anaconda3/envs/py37tensor/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/zht/anaconda3/envs/py37tensor/lib/python3.7/site-packages/torch/nn/parallel/data_parallel.py", line 168, in forward
+    outputs = self.parallel_apply(replicas, inputs, kwargs)
+  File "/home/zht/anaconda3/envs/py37tensor/lib/python3.7/site-packages/torch/nn/parallel/data_parallel.py", line 178, in parallel_apply
+    return parallel_apply(replicas, inputs, kwargs, self.device_ids[:len(replicas)])
+  File "/home/zht/anaconda3/envs/py37tensor/lib/python3.7/site-packages/torch/nn/parallel/parallel_apply.py", line 78, in parallel_apply
+    thread.join()
+  File "/home/zht/anaconda3/envs/py37tensor/lib/python3.7/threading.py", line 1044, in join
+    self._wait_for_tstate_lock()
+  File "/home/zht/anaconda3/envs/py37tensor/lib/python3.7/threading.py", line 1060, in _wait_for_tstate_lock
+    elif lock.acquire(block, timeout):
+KeyboardInterrupt
+Exception ignored in: <module 'threading' from '/home/zht/anaconda3/envs/py37tensor/lib/python3.7/threading.py'>
+Traceback (most recent call last):
+  File "/home/zht/anaconda3/envs/py37tensor/lib/python3.7/threading.py", line 1307, in _shutdown
+    lock.acquire()
+KeyboardInterrupt

@@ -18,7 +18,7 @@ def is_label(filename):
 
 class SemanticKitti(Dataset):
 
-  def __init__(self, root,    # directory where data is
+  def __init__(self, root,    # directory where data is /home/zht/Datasets/Semantic
                sequences,     # sequences for this data (e.g. [1,3,4,6])
                labels,        # label dict: (e.g 10: "car")
                color_map,     # colors dict bgr (e.g 10: [255, 0, 0])
@@ -29,7 +29,7 @@ class SemanticKitti(Dataset):
                gt=True):            # send ground truth?
     # save deats
     self.root = root # os.path.join(root, "sequences")
-    self.sequences = sequences
+    self.sequences = sequences #[0, 1, 2, 3, 4, 5, 6, 7, 9, 10]
     self.labels = labels
     self.color_map = color_map
     self.learning_map = learning_map
@@ -85,13 +85,14 @@ class SemanticKitti(Dataset):
       # get paths for each
       scan_path = os.path.join(self.root, seq, "velodyne")
       label_path = os.path.join(self.root, seq, "labels")
-
+      # print(111)
       # get files
       scan_files = [os.path.join(dp, f) for dp, dn, fn in os.walk(
           os.path.expanduser(scan_path)) for f in fn if is_scan(f)]
       label_files = [os.path.join(dp, f) for dp, dn, fn in os.walk(
           os.path.expanduser(label_path)) for f in fn if is_label(f)]
-
+      # print(len(scan_files))
+      # print(len(label_files))
       # check all scans have labels
       if self.gt:
         assert(len(scan_files) == len(label_files))

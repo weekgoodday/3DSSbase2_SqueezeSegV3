@@ -1,0 +1,209 @@
+{
+    "os": "Linux-5.4.0-124-generic-x86_64-with-debian-buster-sid",
+    "python": "3.7.16",
+    "heartbeatAt": "2023-03-05T03:48:37.892726",
+    "startedAt": "2023-03-05T03:48:36.610976",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "train.py",
+    "codePath": "src/tasks/semantic/train.py",
+    "git": {
+        "remote": "git@github.com:weekgoodday/3DSSbase2_SqueezeSegV3.git",
+        "commit": "f16c7b45bf582de1548d9a50e771923190ab4a5e"
+    },
+    "email": "1900011032@pku.edu.cn",
+    "root": "/home/zht/github_play/SqueezeSegV3",
+    "host": "pku",
+    "username": "zht",
+    "executable": "/home/zht/anaconda3/envs/py37tensor/bin/python",
+    "cpu_count": 16,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 2968.01359375,
+        "min": 2200.0,
+        "max": 3400.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3627.759,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 4541.636,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3626.996,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3646.935,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3631.611,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3624.514,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3609.453,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3622.039,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2195.938,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2190.009,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2191.166,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2196.214,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2195.979,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2192.925,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2195.035,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2194.768,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3603.298,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 4524.137,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3631.729,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3646.058,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3639.642,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3645.969,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3644.808,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3607.241,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2187.978,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2190.961,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2195.14,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2194.631,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2194.725,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2195.869,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2195.824,
+            "min": 2200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2195.448,
+            "min": 2200.0,
+            "max": 3400.0
+        }
+    ],
+    "disk": {
+        "total": 669.4983367919922,
+        "used": 179.44592666625977
+    },
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpu_count": 2,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3090",
+            "memory_total": 25443893248
+        },
+        {
+            "name": "NVIDIA GeForce RTX 3090",
+            "memory_total": 25447170048
+        }
+    ],
+    "memory": {
+        "total": 125.77677154541016
+    }
+}

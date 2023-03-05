@@ -18,8 +18,8 @@ import os
 import numpy as np
 from matplotlib import pyplot as plt
 import random
-
-from common.logger import Logger
+import wandb
+# from common.logger import Logger 有了wandb不需要logger
 
 from common.avgmeter import *
 from common.sync_batchnorm.batchnorm import convert_model
@@ -38,25 +38,25 @@ class Trainer():
     self.path = path
 
     # put logger where it belongs
-    self.tb_logger = Logger(self.log + "/tb")
-    self.info = {"train_update": 0,
-                 "train_loss": 0,
-                 "train_acc": 0,
-                 "train_iou": 0,
-                 "valid_loss": 0,
-                 "valid_acc": 0,
-                 "valid_iou": 0,
-                 "backbone_lr": 0,
-                 "decoder_lr": 0,
-                 "head_lr": 0,
-                 "post_lr": 0}
-
+    # self.tb_logger = Logger(self.log + "/tb")
+    # self.info = {"train_update": 0,
+    #              "train_loss": 0,
+    #              "train_acc": 0,
+    #              "train_iou": 0,
+    #              "valid_loss": 0,
+    #              "valid_acc": 0,
+    #              "valid_iou": 0,
+    #              "backbone_lr": 0,
+    #              "decoder_lr": 0,
+    #              "head_lr": 0,
+    #              "post_lr": 0}
+    # 有了wandb不需要info
     # get the data
     parserModule = imp.load_source("parserModule",
-                                   booger.TRAIN_PATH + '/tasks/semantic/dataset/' +
+                                   '/home/zht/github_play/SqueezeSegV3/src/tasks/semantic/dataset/' +
                                    self.DATA["name"] + '/parser.py')
     self.parser = parserModule.Parser(root=self.datadir,
-                                      train_sequences=self.DATA["split"]["train"],
+                                      train_sequences=self.DATA["split"]["train"], #split {'train': [0, 1, 2, 3, 4, 5, 6, 7, 9, 10], 'valid': [8], 'test': [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]}
                                       valid_sequences=self.DATA["split"]["valid"],
                                       test_sequences=None,
                                       labels=self.DATA["labels"],
@@ -187,19 +187,20 @@ class Trainer():
     return (out_img).astype(np.uint8)
 
   @staticmethod
-  def save_to_log(logdir, logger, info, epoch, w_summary=False, model=None, img_summary=False, imgs=[]):
-    # save scalars
-    for tag, value in info.items():
-      logger.scalar_summary(tag, value, epoch)
+  def save_to_log(logdir, img_summary=False, imgs=[]):
+  # def save_to_log(logdir, logger, info, epoch, w_summary=False, model=None, img_summary=False, imgs=[]):
+    # # save scalars
+    # for tag, value in info.items():
+    #   logger.scalar_summary(tag, value, epoch)
 
-    # save summaries of weights and biases
-    if w_summary and model:
-      for tag, value in model.named_parameters():
-        tag = tag.replace('.', '/')
-        logger.histo_summary(tag, value.data.cpu().numpy(), epoch)
-        if value.grad is not None:
-          logger.histo_summary(
-              tag + '/grad', value.grad.data.cpu().numpy(), epoch)
+    # # save summaries of weights and biases
+    # if w_summary and model:
+    #   for tag, value in model.named_parameters():
+    #     tag = tag.replace('.', '/')
+    #     logger.histo_summary(tag, value.data.cpu().numpy(), epoch)
+    #     if value.grad is not None:
+    #       logger.histo_summary(
+    #           tag + '/grad', value.grad.data.cpu().numpy(), epoch)
 
     if img_summary and len(imgs) > 0:
       directory = os.path.join(logdir, "predictions")
@@ -221,13 +222,14 @@ class Trainer():
         print("Ignoring class ", i, " in IoU evaluation")
     self.evaluator = iouEval(self.parser.get_n_classes(),
                              self.device, self.ignore_class)
-
+    wandb.watch(self.model)
+    wandb_log={}
     # train for n epochs
     for epoch in range(self.ARCH["train"]["max_epochs"]):
-      # get info for learn rate currently
-      groups = self.optimizer.param_groups
-      for name, g in zip(self.lr_group_names, groups):
-        self.info[name] = g['lr']
+      # get info for learn rate currently 有了wandb不需要info
+      # groups = self.optimizer.param_groups
+      # for name, g in zip(self.lr_group_names, groups):
+      #   self.info[name] = g['lr']
 
       # train for 1 epoch
       acc, iou, loss, update_mean = self.train_epoch(train_loader=self.parser.get_train_set(),
@@ -241,12 +243,17 @@ class Trainer():
                                                      report=self.ARCH["train"]["report_batch"],
                                                      show_scans=self.ARCH["train"]["show_scans"])
 
-      # update info
-      self.info["train_update"] = update_mean
-      self.info["train_loss"] = loss
-      self.info["train_acc"] = acc
-      self.info["train_iou"] = iou
-
+      # update info 有了wandb不需要info
+      # self.info["train_update"] = update_mean
+      # self.info["train_loss"] = loss
+      # self.info["train_acc"] = acc
+      # self.info["train_iou"] = iou
+      # zht:wandb
+      wandb_log["train_loss"]=loss
+      wandb_log["train_acc"]=acc
+      wandb_log["train_iou"]=iou
+      wandb_log["train_update"]=update_mean #update_mean 平均更新比率 貌似不如wandb.watch
+      
       # remember best iou and save checkpoint
       if iou > best_train_iou:
         print("Best mean iou in training set so far, save model!")
@@ -264,11 +271,14 @@ class Trainer():
                                                  color_fn=self.parser.to_color,
                                                  save_scans=self.ARCH["train"]["save_scans"])
 
-        # update info
-        self.info["valid_loss"] = loss
-        self.info["valid_acc"] = acc
-        self.info["valid_iou"] = iou
-
+        # update info 有了wandb不需要info
+        # self.info["valid_loss"] = loss
+        # self.info["valid_acc"] = acc
+        # self.info["valid_iou"] = iou
+        wandb_log["valid_loss"] = loss
+        wandb_log["valid_acc"] = acc
+        wandb_log["valid_iou"] = iou
+        wandb.log(wandb_log)
         # remember best iou and save checkpoint
         if iou > best_val_iou:
           print("Best mean iou in validation so far, save model!")
@@ -282,11 +292,6 @@ class Trainer():
 
         # save to log
         Trainer.save_to_log(logdir=self.log,
-                            logger=self.tb_logger,
-                            info=self.info,
-                            epoch=epoch,
-                            w_summary=self.ARCH["train"]["save_summary"],
-                            model=self.model_single,
                             img_summary=self.ARCH["train"]["save_scans"],
                             imgs=rand_img)
 

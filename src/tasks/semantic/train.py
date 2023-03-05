@@ -9,9 +9,12 @@ from shutil import copyfile
 import os
 import shutil
 import __init__ as booger
-
+import wandb
+print("append path:",os.path.abspath(os.path.join(os.path.abspath(__file__),"../../..")))
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.abspath(__file__),"../../..")))
 from tasks.semantic.modules.trainer import *
-import os; os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
+#os.environ["TF_CPP_MIN_LOG_LEVEL"]="2"
 #在!!fix前不能运行
 if __name__ == '__main__':
   parser = argparse.ArgumentParser("./train.py")
@@ -26,14 +29,14 @@ if __name__ == '__main__':
       '--arch_cfg', '-ac',
       type=str,
       #required=True,
-      default='/home/zht/github_play/SqueezeSegV3/src/tasks/semantic/config/arch/SSGV353.yaml',
+      default='/home/zht/github_play/SqueezeSegV3/src/tasks/semantic/config/arch/SSGV321.yaml',
       help='Architecture yaml cfg file. See /config/arch for sample. No default!',
   )
   parser.add_argument(
       '--data_cfg', '-dc',
       type=str,
       required=False,
-      default='config/labels/semantic-kitti.yaml',
+      default='/home/zht/github_play/SqueezeSegV3/src/tasks/semantic/config/labels/semantic-kitti.yaml',
       help='Classification yaml cfg file. See /config/labels for sample. No default!',
   )
   parser.add_argument(
@@ -110,6 +113,7 @@ if __name__ == '__main__':
     print("Error copying files, check permissions. Exiting...")
     quit()
 
+  wandb.init(project="my_ssv3_project",name='trial')
   # # create trainer and start the training
   trainer = Trainer(ARCH, DATA, FLAGS.dataset, FLAGS.log, FLAGS.pretrained)
   trainer.train()
