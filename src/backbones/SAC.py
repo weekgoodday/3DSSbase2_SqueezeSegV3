@@ -157,17 +157,10 @@ class Backbone(nn.Module):
     feature = self.dropout(y)
     return xyz, feature, skips, os
 
-<<<<<<< HEAD
   def forward(self, feature): #forward只有输入 即x 
     skips = {}
     os = 1
     xyz = feature[:,1:4,:,:] #选取第2到第4维猜测是每个点云xyz坐标 第一个维度的第一维相比是点云编号
-=======
-  def forward(self, feature):
-    skips = {}
-    os = 1
-    xyz = feature[:,1:4,:,:]
->>>>>>> ae1ccd40b5a210f419b46eac71623a1aa6a921dc
     feature = self.relu1(self.bn1(self.conv1(feature)))
 
     xyz,feature, skips, os = self.run_layer(xyz,feature, self.enc1, skips, os)

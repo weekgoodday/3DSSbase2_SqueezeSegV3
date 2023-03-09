@@ -258,15 +258,9 @@ class Trainer():
       if iou > best_train_iou:
         print("Best mean iou in training set so far, save model!")
         best_train_iou = iou
-<<<<<<< HEAD
         self.model_single.save_checkpoint(self.log, suffix="_train") #保存的是训练集上iou最好的
 
       if epoch % self.ARCH["train"]["report_epoch"] == 0: #设的1，每代validation一次
-=======
-        self.model_single.save_checkpoint(self.log, suffix="_train")
-
-      if epoch % self.ARCH["train"]["report_epoch"] == 0:
->>>>>>> ae1ccd40b5a210f419b46eac71623a1aa6a921dc
         # evaluate on validation set
         print("*" * 80)
         acc, iou, loss, rand_img = self.validate(val_loader=self.parser.get_valid_set(),
@@ -274,11 +268,7 @@ class Trainer():
                                                  criterion=self.criterion,
                                                  evaluator=self.evaluator,
                                                  class_func=self.parser.get_xentropy_class_string,
-<<<<<<< HEAD
                                                  color_fn=self.parser.to_color, #通过label和color map的映射
-=======
-                                                 color_fn=self.parser.to_color,
->>>>>>> ae1ccd40b5a210f419b46eac71623a1aa6a921dc
                                                  save_scans=self.ARCH["train"]["save_scans"])
 
         # update info 有了wandb不需要info
@@ -296,22 +286,14 @@ class Trainer():
           best_val_iou = iou
 
           # save the weights!
-<<<<<<< HEAD
           self.model_single.save_checkpoint(self.log, suffix="") #保存的测试集上iou最好的
-=======
-          self.model_single.save_checkpoint(self.log, suffix="")
->>>>>>> ae1ccd40b5a210f419b46eac71623a1aa6a921dc
 
         print("*" * 80)
 
         # save to log
         Trainer.save_to_log(logdir=self.log,
                             img_summary=self.ARCH["train"]["save_scans"],
-<<<<<<< HEAD
                             imgs=rand_img) #只有过validation之后才会在prediction中sample 可视化图片
-=======
-                            imgs=rand_img)
->>>>>>> ae1ccd40b5a210f419b46eac71623a1aa6a921dc
 
     print('Finished Training')
 
@@ -349,11 +331,7 @@ class Trainer():
         proj_labels_2 = F.upsample(proj_labels,size=(h,w//2),mode='nearest').squeeze(1).cuda(non_blocking=True).long()
         proj_labels = proj_labels.squeeze(1).cuda(non_blocking=True).long()
 
-<<<<<<< HEAD
       [output, z2, z3, z4, z5] = model(in_vol, proj_mask) #mask并不用
-=======
-      [output, z2, z3, z4, z5] = model(in_vol, proj_mask)
->>>>>>> ae1ccd40b5a210f419b46eac71623a1aa6a921dc
       loss = criterion(torch.log(output.clamp(min=1e-8)), proj_labels)+\
         criterion(torch.log(z5.clamp(min=1e-8)), proj_labels_5)+\
         criterion(torch.log(z4.clamp(min=1e-8)), proj_labels_4)+\
