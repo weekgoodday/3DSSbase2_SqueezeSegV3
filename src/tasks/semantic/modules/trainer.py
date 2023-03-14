@@ -26,7 +26,7 @@ from common.sync_batchnorm.batchnorm import convert_model
 from common.warmupLR import *
 from tasks.semantic.modules.segmentator import *
 from tasks.semantic.modules.ioueval import *
-
+wandb_open=False
 
 class Trainer():
   def __init__(self, ARCH, DATA, datadir, logdir, path=None):
@@ -222,8 +222,9 @@ class Trainer():
         print("Ignoring class ", i, " in IoU evaluation")
     self.evaluator = iouEval(self.parser.get_n_classes(),
                              self.device, self.ignore_class)
-    wandb.watch(self.model)
-    wandb_log={}
+    if(wandb_open):
+      wandb.watch(self.model)
+      wandb_log={}
     # train for n epochs
     for epoch in range(self.ARCH["train"]["max_epochs"]):
       # get info for learn rate currently 有了wandb不需要info
@@ -249,10 +250,12 @@ class Trainer():
       # self.info["train_acc"] = acc
       # self.info["train_iou"] = iou
       # zht:wandb
-      wandb_log["train_loss"]=loss
-      wandb_log["train_acc"]=acc
-      wandb_log["train_iou"]=iou
-      wandb_log["train_update"]=update_mean #update_mean 平均更新比率 貌似不如wandb.watch
+      if(wandb_open):
+      
+        wandb_log["train_loss"]=loss
+        wandb_log["train_acc"]=acc
+        wandb_log["train_iou"]=iou
+        wandb_log["train_update"]=update_mean #update_mean 平均更新比率 貌似不如wandb.watch
       
       # remember best iou and save checkpoint
       if iou > best_train_iou:
@@ -275,10 +278,12 @@ class Trainer():
         # self.info["valid_loss"] = loss
         # self.info["valid_acc"] = acc
         # self.info["valid_iou"] = iou
-        wandb_log["valid_loss"] = loss
-        wandb_log["valid_acc"] = acc
-        wandb_log["valid_iou"] = iou
-        wandb.log(wandb_log)
+        if(wandb_open):
+
+          wandb_log["valid_loss"] = loss
+          wandb_log["valid_acc"] = acc
+          wandb_log["valid_iou"] = iou
+          wandb.log(wandb_log)
         # remember best iou and save checkpoint
         if iou > best_val_iou:
           print("Best mean iou in validation so far, save model!")

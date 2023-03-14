@@ -15,7 +15,8 @@ import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.abspath(__file__),"../../..")))
 from tasks.semantic.modules.trainer import *
 #os.environ["TF_CPP_MIN_LOG_LEVEL"]="2"
-#在!!fix前不能运行
+
+wandb_open=False
 if __name__ == '__main__':
   parser = argparse.ArgumentParser("./train.py")
   parser.add_argument(
@@ -112,8 +113,8 @@ if __name__ == '__main__':
     print(e)
     print("Error copying files, check permissions. Exiting...")
     quit()
-
-  wandb.init(project="my_ssv3_project",name='trial')
+  if(wandb_open):
+    wandb.init(project="my_ssv3_project",name='trial')
   # # create trainer and start the training
   trainer = Trainer(ARCH, DATA, FLAGS.dataset, FLAGS.log, FLAGS.pretrained)
   trainer.train()
