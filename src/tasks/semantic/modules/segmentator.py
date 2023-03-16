@@ -207,6 +207,7 @@ class Segmentator(nn.Module):
     feature, skips = self.backbone(x) #backbone从输入得到features和skips
 
     y = self.decoder(feature, skips) #decoder输入feature和skips 得到y 还含有0-4
+    # y[0]是最后，通道数最少，特征图最大；y[4]是最前（刚被encoder编码完），通道数最多，特征图最小。
       
     z1 = self.head5(y[0])
     z1 = F.softmax(z1,dim=1)
@@ -223,7 +224,7 @@ class Segmentator(nn.Module):
     z5 = self.head1(y[4])
     z5 = F.softmax(z5,dim=1)
 
-    return [z1, z2, z3, z4, z5] #有不同的head，对应不同y的维度
+    return [z1, z2, z3, z4, z5] #有不同的head，对应y(decoder输出)的不同维度(不同层数)
 
   def save_checkpoint(self, logdir, suffix=""):
     # Save the weights
