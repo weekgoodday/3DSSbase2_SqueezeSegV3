@@ -159,7 +159,7 @@ class LaserScan:
     proj_y = proj_y[order]
     proj_x = proj_x[order]
 
-    # assing to images
+    # assing to images 都是H*W xyz是H*W*3 有地方未定义，得保留init时的值
     self.proj_range[proj_y, proj_x] = depth
     self.proj_xyz[proj_y, proj_x] = points
     self.proj_remission[proj_y, proj_x] = remission
@@ -281,8 +281,8 @@ class SemLaserScan(LaserScan):
     mask = self.proj_idx >= 0
 
     # semantics
-    self.proj_sem_label[mask] = self.sem_label[self.proj_idx[mask]]
-    self.proj_sem_color[mask] = self.sem_color_lut[self.sem_label[self.proj_idx[mask]]]
+    self.proj_sem_label[mask] = self.sem_label[self.proj_idx[mask]]  # (H,W) 只有有点的地方有值
+    self.proj_sem_color[mask] = self.sem_color_lut[self.sem_label[self.proj_idx[mask]]]  # (H,W,3)
 
     # instances
     self.proj_inst_label[mask] = self.inst_label[self.proj_idx[mask]]
