@@ -21,7 +21,7 @@ if __name__ == '__main__':
       '--config', '-c',
       type=str,
       required=False,
-      default="config/labels/semantic-kitti.yaml",
+      default="/home/zht/github_play/SqueezeSegV3/src/tasks/semantic/config/labels/semantic-kitti.yaml",
       help='Dataset config file. Defaults to %(default)s',
   )
   parser.add_argument(
@@ -93,7 +93,7 @@ if __name__ == '__main__':
   FLAGS.sequence = '{0:02d}'.format(int(FLAGS.sequence))
 
   # does sequence folder exist?
-  scan_paths = os.path.join(FLAGS.dataset, "sequences",
+  scan_paths = os.path.join(FLAGS.dataset, #"sequences",
                             FLAGS.sequence, "velodyne")
   if os.path.isdir(scan_paths):
     print("Sequence folder exists! Using sequence from %s" % scan_paths)
@@ -112,7 +112,7 @@ if __name__ == '__main__':
       label_paths = os.path.join(FLAGS.predictions, "sequences",
                                  FLAGS.sequence, "predictions")
     else:
-      label_paths = os.path.join(FLAGS.dataset, "sequences",
+      label_paths = os.path.join(FLAGS.dataset, #"sequences",
                                  FLAGS.sequence, "labels")
     if os.path.isdir(label_paths):
       print("Labels folder exists! Using labels from %s" % label_paths)

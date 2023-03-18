@@ -109,17 +109,16 @@ class KNN(nn.Module):
     # find nearest neighbors
     _, knn_idx = k2_distances.topk(
         self.knn, dim=1, largest=False, sorted=False)
-
     # do the same unfolding with the argmax
-    proj_unfold_1_argmax = F.unfold(proj_argmax[None, None, ...].float(),
+    proj_unfold_1_argmax = F.unfold(proj_argmax[None, None, ...].float(),  # 维度变成[1,1,64,2048]
                                     kernel_size=(self.search, self.search),
                                     padding=(pad, pad)).long()
     unproj_unfold_1_argmax = proj_unfold_1_argmax[:, :, idx_list]
-
+    #print("unfoldshape:", unproj_unfold_1_argmax.shape)  7*7
     # get the top k predictions from the knn at each pixel
     knn_argmax = torch.gather(
         input=unproj_unfold_1_argmax, dim=1, index=knn_idx)
-
+    #print("knnshape:", knn_argmax.shape) 7
     # fake an invalid argmax of classes + 1 for all cutoff items
     if self.cutoff > 0:
       knn_distances = torch.gather(input=k2_distances, dim=1, index=knn_idx)
@@ -132,11 +131,11 @@ class KNN(nn.Module):
         (1, self.nclasses + 1, P[0]), device=device).type(proj_range.type())
     ones = torch.ones_like(knn_argmax).type(proj_range.type())
     knn_argmax_onehot = knn_argmax_onehot.scatter_add_(1, knn_argmax, ones)
-
+    #print("knn_onehotshape",knn_argmax_onehot.shape) 21
     # now vote (as a sum over the onehot shit)  (don't let it choose unlabeled OR invalid)
     knn_argmax_out = knn_argmax_onehot[:, 1:-1].argmax(dim=1) + 1
-
+    #print("knn_outshape",knn_argmax_out.shape) 最终得到1
     # reshape again
     knn_argmax_out = knn_argmax_out.view(P)
-
+    #raise NotImplementedError
     return knn_argmax_out

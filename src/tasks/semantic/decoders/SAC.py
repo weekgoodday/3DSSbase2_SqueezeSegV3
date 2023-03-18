@@ -109,7 +109,7 @@ class Decoder(nn.Module):
 
   def run_layer(self, x, layer, skips, os):
     feats = layer(x)  # up
-    if feats.shape[-1] > x.shape[-1]:
+    if feats.shape[-1] > x.shape[-1]: #如果输出特征图变大了（上采样），让特征加上skip来的特征（skip Connection）
       os //= 2  # match skip
       feats = feats + skips[os].detach()  # add skip
     x = feats

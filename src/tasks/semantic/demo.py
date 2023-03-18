@@ -1,7 +1,10 @@
 
 #!/usr/bin/env python3
 # This file is covered by the LICENSE file in the root of this project.
-
+# import sys
+# sys.path.append("github_play/SqueezeSegV3/src/")
+import os
+os.chdir("/home/zht/github_play/SqueezeSegV3/src/tasks/semantic/")
 import argparse
 import subprocess
 import datetime
@@ -10,7 +13,7 @@ from shutil import copyfile
 import os
 import shutil
 import __init__ as booger
-
+print(os.path.abspath("./"))
 from tasks.semantic.modules.demo_user import *
 
 
@@ -19,7 +22,7 @@ if __name__ == '__main__':
   parser.add_argument(
       '--dataset', '-d',
       type=str,
-      default = "../../../sample_data/", 
+      default = "../../../sample_data/sequences/", 
       help='Dataset to sample'
   )
   parser.add_argument(

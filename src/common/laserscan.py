@@ -153,7 +153,7 @@ class LaserScan:
     indices = np.arange(depth.shape[0])
     order = np.argsort(depth)[::-1]
     depth = depth[order]
-    indices = indices[order]
+    indices = indices[order]  # indices就等于order 给出点从远到近的下标
     points = self.points[order]
     remission = self.remissions[order]
     proj_y = proj_y[order]

@@ -330,7 +330,7 @@ class Trainer():
 
       if self.gpu:
         [n, c, h, w] = proj_labels.size()
-        proj_labels_5 = F.upsample(proj_labels,size=(h,w//8),mode='nearest').squeeze(1).cuda(non_blocking=True).long()
+        proj_labels_5 = F.upsample(proj_labels,size=(h,w//8),mode='nearest').squeeze(1).cuda(non_blocking=True).long() #其实是下采样标签 与decoder上采样的中间结果比对，算loss
         proj_labels_4 = F.upsample(proj_labels,size=(h,w//8),mode='nearest').squeeze(1).cuda(non_blocking=True).long()
         proj_labels_3 = F.upsample(proj_labels,size=(h,w//4),mode='nearest').squeeze(1).cuda(non_blocking=True).long()
         proj_labels_2 = F.upsample(proj_labels,size=(h,w//2),mode='nearest').squeeze(1).cuda(non_blocking=True).long()

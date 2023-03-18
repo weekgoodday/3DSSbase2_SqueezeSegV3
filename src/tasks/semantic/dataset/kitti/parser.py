@@ -288,7 +288,6 @@ class Parser():
                                                    drop_last=True)
         assert len(self.validloader) > 0
         self.validiter = iter(self.validloader)
-
     if self.test_sequences:
       self.test_dataset = SemanticKitti(root=self.root,
                                         sequences=self.test_sequences,
@@ -299,13 +298,14 @@ class Parser():
                                         sensor=self.sensor,
                                         max_points=max_points,
                                         gt=False)
-
+      
       self.testloader = torch.utils.data.DataLoader(self.test_dataset,
                                                     batch_size=self.batch_size,
                                                     shuffle=False,
                                                     num_workers=self.workers,
                                                     pin_memory=True,
                                                     drop_last=True)
+      
       assert len(self.testloader) > 0
       self.testiter = iter(self.testloader)
 
