@@ -82,13 +82,9 @@ class User():
     print('Finished Infering')
 
     return
-  def h(self,a): # 主要时间都浪费在了求熵的这两个丑丑的循环 有空优化一下
-    # print(a)
-    # print(type(a))
+  def h(self,a): # 直接*就可以 两个立方块对应相乘
     b=torch.zeros(a.shape[1],a.shape[2])
-    for i in range(a.shape[1]):
-      for j in range(a.shape[2]):
-        b[i,j]=-torch.sum(a[:,i,j]*torch.log(a[:,i,j]))
+    b=-torch.sum(a*torch.log(a),dim=0)
     return b
   def outputcsv(self,a,str):
     c=a.squeeze(0).numpy()
