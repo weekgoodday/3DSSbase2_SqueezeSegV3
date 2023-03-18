@@ -82,13 +82,13 @@ class User():
     print('Finished Infering')
 
     return
-  def h(self,a):
+  def h(self,a): # 主要时间都浪费在了求熵的这两个丑丑的循环 有空优化一下
     # print(a)
     # print(type(a))
-    b=torch.zeros(1,a.shape[1],a.shape[2])
+    b=torch.zeros(a.shape[1],a.shape[2])
     for i in range(a.shape[1]):
       for j in range(a.shape[2]):
-        b[0,i,j]=-torch.sum(a[:,i,j]*torch.log(a[:,i,j]))
+        b[i,j]=-torch.sum(a[:,i,j]*torch.log(a[:,i,j]))
     return b
   def outputcsv(self,a,str):
     c=a.squeeze(0).numpy()
@@ -96,8 +96,10 @@ class User():
     df.to_csv('/home/zht/outputfile/'+str+'.csv')
   def infer_subset(self, loader, to_orig_fn):
     # switch to evaluate mode
-    self.model.eval()
-
+    # self.model.eval()
+    # zht:开启全部dropout已得到uncertainty
+    self.model.train()
+    T=10
     # empty the cache to infer in high res
     if self.gpu:
       torch.cuda.empty_cache()
@@ -123,14 +125,22 @@ class User():
           if self.post:
             proj_range = proj_range.cuda()
             unproj_range = unproj_range.cuda()
-
-        proj_output, _, _, _, _ = self.model(proj_in, proj_mask)
+        # zht: 前传T次
+        proj_output_T=torch.zeros(T,self.parser.get_n_classes(),proj_in.shape[-2],proj_in.shape[-1])
+        proj_total=torch.zeros(T,proj_in.shape[-2],proj_in.shape[-1])
+        for i in range(T):
+          proj_output, _, _, _, _ = self.model(proj_in, proj_mask)
         # print(proj_output.shape)  # torch.Size([1,20,64,2048])
         # print(proj_output.device)
         # print(proj_output[0].cpu().shape)
-
-        # zht: 计算朴素的熵
-        uncertainty_bak=self.h(proj_output[0].cpu())
+          proj_output_T[i,:]=proj_output
+          proj_total[i,:]=self.h(proj_output[0].cpu())
+        # zht: 计算熵
+        #raise NotImplementedError
+        proj_output_mean=torch.mean(proj_output_T,dim=0)
+        Aleatoric_uncertainty=torch.mean(proj_total,dim=0)
+        Total_uncertainty=self.h(proj_output_mean)
+        Epistemic_uncertainty=Total_uncertainty-Aleatoric_uncertainty
 
         # c=uncertainty_bak.squeeze(0).numpy()
         # df=pandas.DataFrame(c)
@@ -160,8 +170,6 @@ class User():
         # print(a[matrix_bool].shape)
         # print(proj_argmax.shape)
         # print(uncertainty_bak.shape)
-        uncertainty_bak=uncertainty_bak.squeeze(0).cuda()
-        #raise NotImplementedError
         # print("proj_output[0]:",proj_output[0].shape)
         # unproj_output=self.post(proj_range,
         #           unproj_range,
@@ -188,7 +196,8 @@ class User():
           # put in original pointcloud using indexes
           unproj_argmax = proj_argmax[p_y, p_x]
         # 关键：转变为原始点云
-        unproj_uncertainty_bak=uncertainty_bak[p_y,p_x]
+        unproj_AU=Aleatoric_uncertainty[p_y,p_x]
+        unproj_EU=Epistemic_uncertainty[p_y,p_x]
         unproj_output=proj_output[0][:,p_y,p_x]
         # print("original output prob:", unproj_output.shape) [20,124668]
         if torch.cuda.is_available():
@@ -211,20 +220,24 @@ class User():
         path = os.path.join(self.logdir, "sequences",
                             path_seq, "predictions", path_name)
         pred_np.tofile(path)
-        unproj_uncertainty_bak=unproj_uncertainty_bak.cpu().numpy().reshape((-1)).astype(np.float32)
-        path_name2=path_name.split(".")[0]+".uncertainty"
-        path2=os.path.join(self.logdir, "sequences",
-                            path_seq, "predictions", path_name2)
-        #raise NotImplementedError
-        unproj_uncertainty_bak.tofile(path2)
-        print(unproj_output.shape)
-        print(unproj_output[:,0])
         unproj_output=unproj_output.cpu().numpy().reshape((20,-1)).astype(np.float32)
         path_name3=path_name.split(".")[0]+".prob"
         path3=os.path.join(self.logdir, "sequences",
                             path_seq, "predictions", path_name3)
         unproj_output.tofile(path3)
-        # raise NotImplementedError
+        unproj_AU=unproj_AU.cpu().numpy().reshape((-1)).astype(np.float32)
+        path_name4=path_name.split(".")[0]+".au"
+        path4=os.path.join(self.logdir, "sequences",
+                            path_seq, "predictions", path_name4)
+        #raise NotImplementedError
+        unproj_AU.tofile(path4)
+        unproj_EU=unproj_EU.cpu().numpy().reshape((-1)).astype(np.float32)
+        path_name5=path_name.split(".")[0]+".eu"
+        path5=os.path.join(self.logdir, "sequences",
+                            path_seq, "predictions", path_name5)
+        #raise NotImplementedError
+        unproj_EU.tofile(path5)
+        break
         # 以下画投影视角的图不重要了
         # depth = (cv2.normalize(proj_in[0][0].cpu().numpy(), None, alpha=0, beta=1,
         #                    norm_type=cv2.NORM_MINMAX,
