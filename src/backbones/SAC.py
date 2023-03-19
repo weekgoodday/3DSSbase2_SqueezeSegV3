@@ -162,13 +162,17 @@ class Backbone(nn.Module):
     os = 1
     xyz = feature[:,1:4,:,:] #选取第2到第4维猜测是每个点云xyz坐标 第一个维度的第一维相比是点云编号
     feature = self.relu1(self.bn1(self.conv1(feature)))
-
+    # print(feature.shape) #torch.Size([1, 32, 64, 2048])
     xyz,feature, skips, os = self.run_layer(xyz,feature, self.enc1, skips, os)
+    # print("111",xyz.shape,feature.shape,skips[1].shape) #torch.Size([1, 3, 64, 1024]) torch.Size([1, 64, 64, 1024]) torch.Size([1, 32, 64, 2048])
     xyz,feature, skips, os = self.run_layer(xyz,feature, self.enc2, skips, os)
+    # print("222",xyz.shape,feature.shape,skips[2].shape) #torch.Size([1, 3, 64, 512]) torch.Size([1, 128, 64, 512]) torch.Size([1, 64, 64, 1024])
     xyz,feature, skips, os = self.run_layer(xyz,feature, self.enc3, skips, os)
+    # print("333",xyz.shape,feature.shape,skips[4].shape) #torch.Size([1, 3, 64, 256]) torch.Size([1, 256, 64, 256]) torch.Size([1, 128, 64, 512])
     xyz,feature, skips, os = self.run_layer(xyz,feature, self.enc4, skips, os, flag=False)
+    # print("444",xyz.shape,feature.shape,len(skips)) # torch.Size([1, 3, 64, 256]) torch.Size([1, 256, 64, 256]) 3
     xyz,feature, skips, os = self.run_layer(xyz,feature, self.enc5, skips, os, flag=False)
-
+    # print("555",xyz.shape,feature.shape,len(skips)) # torch.Size([1, 3, 64, 256]) torch.Size([1, 256, 64, 256]) 3
     return feature, skips
 
   def get_last_depth(self):

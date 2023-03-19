@@ -120,11 +120,15 @@ class Decoder(nn.Module):
 
     # run layers
     x1, skips, os = self.run_layer(x, self.dec5, skips, os)
+    # print(x1.shape) #torch.Size([1, 256, 64, 256])
     x2, skips, os = self.run_layer(x1, self.dec4, skips, os)
+    # print(x2.shape) #torch.Size([1, 256, 64, 256])
     x3, skips, os = self.run_layer(x2, self.dec3, skips, os)
+    # print(x3.shape) #torch.Size([1, 128, 64, 512])
     x4, skips, os = self.run_layer(x3, self.dec2, skips, os)
+    # print(x4.shape) #torch.Size([1, 64, 64, 1024])
     x5, skips, os = self.run_layer(x4, self.dec1, skips, os)
-
+    # print(x5.shape) #torch.Size([1, 32, 64, 2048])
     x5 = self.dropout(x5)
 
     return [x5, x4, x3, x2, x1]

@@ -6,7 +6,13 @@ This repository contains a Pytorch implementation of SqueezeSegV3, a state-of-th
 <p align="center">
     <img src="./figure/framework.png"/ width="750">
 </p>
-
+more detail framework:
+<p align="center">
+    <img src="./figure/frame_detail.jpg"/ width="750">
+</p>
+<p align="center">
+    <img src="./figure/frame_supplementary.jpg"/ width="750">
+</p>
 
 Selected quantitative results of different approaches on the SemanticKITTI dataset (* means KNN post-processing):
 
@@ -28,7 +34,7 @@ Visualization results of SqueezeSegV3:
 </p>
 
 
-For more details, please refer to our paper: [SqueezeSegV3](https://arxiv.org/abs/2004.01803). The work is a follow-up work to [SqueezeSeg](https://github.com/BichenWuUCB/SqueezeSeg), [SqueezeSegV2](https://github.com/xuanyuzhou98/SqueezeSegV2) and [LATTE](https://github.com/bernwang/latte). If you find this work useful for your research, please consider citing:
+For more details, please refer to paper: [SqueezeSegV3](https://arxiv.org/abs/2004.01803). The work is a follow-up work to [SqueezeSeg](https://github.com/BichenWuUCB/SqueezeSeg), [SqueezeSegV2](https://github.com/xuanyuzhou98/SqueezeSegV2) and [LATTE](https://github.com/bernwang/latte). If you find this work useful for your research, please consider citing:
 
 ```
 @inproceedings{xu2020squeezesegv3,
@@ -41,33 +47,6 @@ For more details, please refer to our paper: [SqueezeSegV3](https://arxiv.org/ab
 }
 ```
 
-Related works:
-
-```
- @inproceedings{wu2018squeezesegv2,
-   title={SqueezeSegV2: Improved Model Structure and Unsupervised Domain Adaptation
-   for Road-Object Segmentation from a LiDAR Point Cloud},
-   author={Wu, Bichen and Zhou, Xuanyu and Zhao, Sicheng and Yue, Xiangyu and Keutzer, Kurt},
-   booktitle={ICRA},
-   year={2019},
- }
- 
-@inproceedings{wu2017squeezeseg,
-   title={Squeezeseg: Convolutional neural nets with recurrent crf for real-time road-object segmentation from 3d lidar point cloud},
-   author={Wu, Bichen and Wan, Alvin and Yue, Xiangyu and Keutzer, Kurt},
-   booktitle={ICRA}, 
-   year={2018}
- }
- 
-@inproceedings{wang2019latte,
-  title={LATTE: accelerating lidar point cloud annotation via sensor fusion, one-click annotation, and tracking},
-  author={Wang, Bernie and Wu, Virginia and Wu, Bichen and Keutzer, Kurt},
-  booktitle={2019 IEEE Intelligent Transportation Systems Conference (ITSC)},
-  pages={265--272},
-  year={2019},
-  organization={IEEE}
-}
-```
 
 ## License
 **SqueezeSegV3** is released under the BSD license (See [LICENSE](https://github.com/chenfengxu714/SqueezeSegV3/blob/master/LICENSE) for details).
@@ -77,11 +56,6 @@ Related works:
 The instructions are tested on Ubuntu 16.04 with python 3.6 and Pytorch 1.1.0 with GPU support.
 
 * Clone the SqueezeSeg3 repository:
-
-
-```shell
-git clone https://github.com/chenfengxu714/SqueezeSegV3.git
-```
 
 * Use pip to install required Python packages:
 
