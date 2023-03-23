@@ -38,8 +38,13 @@ if __name__ == '__main__':
       default=None,
       help='Directory to get the trained model.'
   )
+  parser.add_argument(
+    '--mode',
+    type=str,
+    default='test_split',
+    help='Only test_split or train_split to choose, if choose test_split, use sequence08, choose train_split, use sequence 00'
+  )
   FLAGS, unparsed = parser.parse_known_args()
-
   # print summary of what we will do
   print("----------")
   print("INTERFACE:")
@@ -66,19 +71,28 @@ if __name__ == '__main__':
     print(e)
     print("Error opening data yaml file.")
     quit()
-
+  mode = FLAGS.mode
+  if(mode=="train_split"):
+    using_sequences=DATA["split"]["sample"]
+  elif(mode=="test_split"):
+    using_sequences=DATA["split"]["sample2"]
   # create log folder
   try:
-    if os.path.isdir(FLAGS.log):
-      shutil.rmtree(FLAGS.log)
-    os.makedirs(FLAGS.log)
-    os.makedirs(os.path.join(FLAGS.log, "sequences"))
+    # if os.path.isdir(FLAGS.log):
+    #   shutil.rmtree(FLAGS.log)
+    if not os.path.exists(FLAGS.log):
+      os.makedirs(FLAGS.log)
+    if not os.path.exists(os.path.join(FLAGS.log, "sequences")):
+      os.makedirs(os.path.join(FLAGS.log, "sequences"))
 
-    for seq in DATA["split"]["sample"]:
+    
+    for seq in using_sequences:
       seq = '{0:02d}'.format(int(seq))
       print("sample_list",seq)
-      os.makedirs(os.path.join(FLAGS.log,"sequences", str(seq)))
-      os.makedirs(os.path.join(FLAGS.log,"sequences", str(seq), "predictions"))
+      if not os.path.exists(os.path.join(FLAGS.log,"sequences",str(seq))):
+        os.makedirs(os.path.join(FLAGS.log,"sequences", str(seq)))
+      if not os.path.exists(os.path.join(FLAGS.log,"sequences", str(seq), "predictions")):
+        os.makedirs(os.path.join(FLAGS.log,"sequences", str(seq), "predictions"))
 
   except Exception as e:
     print(e)
@@ -97,5 +111,5 @@ if __name__ == '__main__':
     print("model folder doesnt exist! Can't infer...")
     quit()
   # create user and infer dataset
-  user = User(ARCH, DATA, FLAGS.dataset, FLAGS.log, FLAGS.model)
+  user = User(ARCH, DATA, FLAGS.dataset, FLAGS.log, FLAGS.model,mode)
   user.infer()
