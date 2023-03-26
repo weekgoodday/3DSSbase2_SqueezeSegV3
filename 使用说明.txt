@@ -1,10 +1,11 @@
 SqueezeSegV3:
 conda activate ssv3
 cd github_play/SqueezeSegV3/src/tasks/semantic/
-python train.py
-有21层和53层版的
+python train.py --name train0-3
+（--name参数可选，加入后会开启以name命名的wandb projects）
+有21层和53层版的，默认使用21层版的
 预训练模型保存在/home/zht/github_play/SqueezeSegV3/pretrain
-训练完模型保存在
+训练完模型保存在/home/zht/logs/时间戳/...
 训练完模型用于点云分割任务方式： 
 1 只得到一个demo图片  (针对某一帧点云 就用demo.py得到label和uncertainty)
 cd ~/github_play/SqueezeSegV3/src/tasks/semantic/

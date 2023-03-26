@@ -16,7 +16,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.abspath(__file__),"../../..
 from tasks.semantic.modules.trainer import *
 #os.environ["TF_CPP_MIN_LOG_LEVEL"]="2"
 
-wandb_open=False
+
 if __name__ == '__main__':
   parser = argparse.ArgumentParser("./train.py")
   parser.add_argument(
@@ -54,8 +54,17 @@ if __name__ == '__main__':
       default=None,
       help='Directory to get the pretrained model. If not passed, do from scratch!'
   )
+  parser.add_argument(
+      '--name', 
+      type=str,
+      required=False,
+      default=None,
+      help='wandbname if not None, use wandb'
+  )
+  
   FLAGS, unparsed = parser.parse_known_args()
-
+  if(FLAGS.name != None):
+    wandb_open=True
   # print summary of what we will do
   print("----------")
   print("INTERFACE:")
@@ -114,7 +123,7 @@ if __name__ == '__main__':
     print("Error copying files, check permissions. Exiting...")
     quit()
   if(wandb_open):
-    wandb.init(project="my_ssv3_project",name='trial')
+    wandb.init(project="my_ssv3_project",name=FLAGS.name)
   # # create trainer and start the training
-  trainer = Trainer(ARCH, DATA, FLAGS.dataset, FLAGS.log, FLAGS.pretrained)
+  trainer = Trainer(ARCH, DATA, FLAGS.dataset, FLAGS.log, FLAGS.pretrained,wandb_open)
   trainer.train()

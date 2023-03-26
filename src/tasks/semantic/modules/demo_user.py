@@ -213,7 +213,7 @@ class User():
         unproj_AU=Aleatoric_uncertainty[p_y,p_x]
         unproj_EU=Epistemic_uncertainty[p_y,p_x]
         unproj_output=proj_output_mean[:,p_y,p_x]
-        unproj_argmax = proj_argmax[p_y,p_x] #强制不开启KNN后处理
+        unproj_argmax = proj_argmax[p_y,p_x] #zht 强制不开启KNN后处理
         # debug：不改成+1e-45验证集会在特定位置报错 
         # print(unproj_AU[115508])
         # print(unproj_EU[115508])

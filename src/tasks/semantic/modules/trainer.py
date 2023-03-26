@@ -26,17 +26,17 @@ from common.sync_batchnorm.batchnorm import convert_model
 from common.warmupLR import *
 from tasks.semantic.modules.segmentator import *
 from tasks.semantic.modules.ioueval import *
-wandb_open=False
+
 
 class Trainer():
-  def __init__(self, ARCH, DATA, datadir, logdir, path=None):
+  def __init__(self, ARCH, DATA, datadir, logdir, path=None,wandb_open=False):  # logdir是~/logs/2023-xxx
     # parameters
     self.ARCH = ARCH
     self.DATA = DATA
     self.datadir = datadir
     self.log = logdir
     self.path = path
-
+    self.wandb_open=wandb_open
     # put logger where it belongs
     # self.tb_logger = Logger(self.log + "/tb")
     # self.info = {"train_update": 0,
@@ -222,7 +222,7 @@ class Trainer():
         print("Ignoring class ", i, " in IoU evaluation")
     self.evaluator = iouEval(self.parser.get_n_classes(),
                              self.device, self.ignore_class)
-    if(wandb_open):
+    if(self.wandb_open):
       wandb.watch(self.model)
       wandb_log={}
     # train for n epochs
@@ -250,7 +250,7 @@ class Trainer():
       # self.info["train_acc"] = acc
       # self.info["train_iou"] = iou
       # zht:wandb
-      if(wandb_open):
+      if(self.wandb_open):
       
         wandb_log["train_loss"]=loss
         wandb_log["train_acc"]=acc
@@ -278,7 +278,7 @@ class Trainer():
         # self.info["valid_loss"] = loss
         # self.info["valid_acc"] = acc
         # self.info["valid_iou"] = iou
-        if(wandb_open):
+        if(self.wandb_open):
 
           wandb_log["valid_loss"] = loss
           wandb_log["valid_acc"] = acc
@@ -291,7 +291,7 @@ class Trainer():
           best_val_iou = iou
 
           # save the weights!
-          self.model_single.save_checkpoint(self.log, suffix="") #保存的测试集上iou最好的
+          self.model_single.save_checkpoint(self.log, suffix=f"_valid_{epoch}") #保存的测试集上iou最好的
 
         print("*" * 80)
 
