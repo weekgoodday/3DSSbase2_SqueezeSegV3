@@ -26,10 +26,12 @@ from common.sync_batchnorm.batchnorm import convert_model
 from common.warmupLR import *
 from tasks.semantic.modules.segmentator import *
 from tasks.semantic.modules.ioueval import *
-
+def set_dropout(m,p):
+  if type(m) == nn.Dropout2d:
+    m.p=p
 
 class Trainer():
-  def __init__(self, ARCH, DATA, datadir, logdir, path=None,wandb_open=False):  # logdir是~/logs/2023-xxx
+  def __init__(self, ARCH, DATA, datadir, logdir, path=None,wandb_open=False,p=0.01):  # logdir是~/logs/2023-xxx zht:p is dropout rate
     # parameters
     self.ARCH = ARCH
     self.DATA = DATA
@@ -77,13 +79,12 @@ class Trainer():
     for cl, freq in DATA["content"].items():
       x_cl = self.parser.to_xentropy(cl)  # map actual class to xentropy class
       content[x_cl] += freq
-    self.loss_w = 1 / (content + epsilon_w)   # get weights
-    for x_cl, w in enumerate(self.loss_w):  # ignore the ones necessary to ignore
+    self.loss_w = 1 / (content + epsilon_w)   # get weights loss weights与该类别出现次数负相关
+    for x_cl, w in enumerate(self.loss_w):  # ignore the ones necessary to ignore  也是0类不影响loss
       if DATA["learning_ignore"][x_cl]:
         # don't weigh
         self.loss_w[x_cl] = 0
     print("Loss weights from content: ", self.loss_w.data)
-
     # concatenate the encoder and the head
     with torch.no_grad():
       self.model = Segmentator(self.ARCH,
@@ -94,7 +95,9 @@ class Trainer():
     self.gpu = False
     self.multi_gpu = False
     self.n_gpus = 0
-    self.model_single = self.model
+    # zht: revise dropout rate
+    self.model
+    self.model_single = self.model.apply(lambda x : set_dropout(x,p))
     self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("Training in device: ", self.device)
     if torch.cuda.is_available() and torch.cuda.device_count() > 0:
@@ -221,7 +224,7 @@ class Trainer():
         self.ignore_class.append(i)
         print("Ignoring class ", i, " in IoU evaluation")
     self.evaluator = iouEval(self.parser.get_n_classes(),
-                             self.device, self.ignore_class)
+                             self.device, self.ignore_class)  # 评价IoU的时候也Ignore 0类
     if(self.wandb_open):
       wandb.watch(self.model)
       wandb_log={}

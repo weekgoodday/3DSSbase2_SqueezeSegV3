@@ -10,7 +10,7 @@ import imp
 import yaml
 import time
 from PIL import Image
-import __init__ as booger
+import __init__ as booger # 会查找__init__.py 难怪from tasks.semantic.modules.xxx不报错
 import collections
 import copy
 import cv2
@@ -103,6 +103,12 @@ class User():
     # self.model.eval()
     # zht:开启全部dropout已得到uncertainty
     self.model.eval()
+    # for m in self.model.modules():  # 确认是7个0.01的Dropout
+    #   if type(m) == torch.nn.modules.dropout.Dropout2d or type(m) == nn.Dropout():
+    #     print(m)
+    #     print(m.p)
+    # import pdb
+    # pdb.set_trace()
     self.model.apply(apply_dropout)
     T=10
     # empty the cache to infer in high res
@@ -146,10 +152,17 @@ class User():
         #       f.write('%.2f '% proj_output_T[i,j,0,0])
         #     f.write(f'\n')
         # zht: 计算熵
+        
         proj_output_mean=torch.mean(proj_output_T,dim=0) #torch.Size([20, 64, 2048])
         Aleatoric_uncertainty=torch.mean(proj_total,dim=0)
         Total_uncertainty=self.h(proj_output_mean)
         Epistemic_uncertainty=Total_uncertainty-Aleatoric_uncertainty
+        # print(pro_labels[0][1,2000:2023])
+        # print(Epistemic_uncertainty[1,2000:2023])
+        # print(Aleatoric_uncertainty[1,2000:2023])
+        # print(Total_uncertainty[1,2000:2023])
+        # import pdb 
+        # pdb.set_trace()
         # debug：不改成+1e-45验证集会在特定位置报错 
         # print(proj_output_T[:,:,57,993])
         # print(proj_total[:,57,993])
@@ -253,7 +266,7 @@ class User():
                             path_seq, "predictions", path_name2)
         unproj_label.tofile(path2) #0-19的真值
 
-        unproj_output=unproj_output.cpu().numpy().reshape((20,-1)).astype(np.float32)
+        unproj_output=unproj_output.cpu().numpy().reshape((20,-1)).T.astype(np.float32)
         path_name3=path_name.split(".")[0]+".prob"
         path3=os.path.join(self.logdir, "sequences",
                             path_seq, "predictions", path_name3)

@@ -6,7 +6,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from tasks.semantic.postproc.CRF import CRF
-import __init__ as booger
+from backbones.SAC import Backbone
+from tasks.semantic.decoders.SAC import Decoder
+# import __init__ as booger
 
 class Segmentator(nn.Module):
   def __init__(self, ARCH, nclasses, path=None, path_append="", strict=False):
@@ -17,10 +19,10 @@ class Segmentator(nn.Module):
     self.path_append = path_append
     self.strict = False
   
-    bboneModule = imp.load_source("bboneModule",
-                                  booger.TRAIN_PATH + '/backbones/' +
-                                  self.ARCH["backbone"]["name"] + '.py')
-    self.backbone = bboneModule.Backbone(params=self.ARCH["backbone"]) #有一个backbone模块 在最上层 name是SAC 
+    # bboneModule = imp.load_source("bboneModule",
+    #                               booger.TRAIN_PATH + '/backbones/' +
+    #                               self.ARCH["backbone"]["name"] + '.py')
+    self.backbone = Backbone(params=self.ARCH["backbone"]) #有一个backbone模块 在最上层 name是SAC 
 
     # do a pass of the backbone to initialize the skip connections
     xyz = torch.zeros((1, 3, 
@@ -37,10 +39,10 @@ class Segmentator(nn.Module):
       self.backbone.cuda()
     _, stub_skips = self.backbone(stub)
 
-    decoderModule = imp.load_source("decoderModule",
-                                    booger.TRAIN_PATH + '/tasks/semantic/decoders/' +
-                                    self.ARCH["decoder"]["name"] + '.py')
-    self.decoder = decoderModule.Decoder(params=self.ARCH["decoder"],
+    # decoderModule = imp.load_source("decoderModule",
+    #                                 booger.TRAIN_PATH + '/tasks/semantic/decoders/' +
+    #                                 self.ARCH["decoder"]["name"] + '.py')
+    self.decoder = Decoder(params=self.ARCH["decoder"],
                                          stub_skips=stub_skips,
                                          OS=self.ARCH["backbone"]["OS"],
                                          feature_depth=self.backbone.get_last_depth()) #有一个decoder模块 在decoder的SAC 

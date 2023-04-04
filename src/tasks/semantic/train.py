@@ -61,8 +61,15 @@ if __name__ == '__main__':
       default=None,
       help='wandbname if not None, use wandb'
   )
-  
+  parser.add_argument(
+      '--dropout_rate',
+      type=float,
+      default=0.01,
+      #required=True,
+      help='if change dropout rate to train, use this parameter',
+  )
   FLAGS, unparsed = parser.parse_known_args()
+  wandb_open=False
   if(FLAGS.name != None):
     wandb_open=True
   # print summary of what we will do
@@ -125,5 +132,5 @@ if __name__ == '__main__':
   if(wandb_open):
     wandb.init(project="my_ssv3_project",name=FLAGS.name)
   # # create trainer and start the training
-  trainer = Trainer(ARCH, DATA, FLAGS.dataset, FLAGS.log, FLAGS.pretrained,wandb_open)
+  trainer = Trainer(ARCH, DATA, FLAGS.dataset, FLAGS.log, FLAGS.pretrained,wandb_open,FLAGS.dropout_rate)
   trainer.train()

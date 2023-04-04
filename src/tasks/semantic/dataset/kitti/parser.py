@@ -26,7 +26,7 @@ class SemanticKitti(Dataset):
                learning_map_inv,    # inverse of previous (recover labels)
                sensor,              # sensor to parse scans from
                max_points=150000,   # max number of points present in dataset
-               gt=True):            # send ground truth?
+               gt=True):            # send ground truth?  自然只有test没有gt
     # save deats
     self.root = root # os.path.join(root, "sequences")
     self.sequences = sequences #[0, 1, 2, 3, 4, 5, 6, 7, 9, 10]
@@ -134,9 +134,10 @@ class SemanticKitti(Dataset):
     if self.gt:
       scan.open_label(label_file)
       # map unused classes to used classes (also for projection)
+      # print("original,",list(set(scan.sem_label)))  # 34 classes
       scan.sem_label = self.map(scan.sem_label, self.learning_map)
       scan.proj_sem_label = self.map(scan.proj_sem_label, self.learning_map)
-
+      # print("after map",list(set(scan.sem_label)))  # 20 classes
     # make a tensor of the uncompressed data (with the max num points)
     unproj_n_points = scan.points.shape[0]
     unproj_xyz = torch.full((self.max_points, 3), -1.0, dtype=torch.float)
@@ -217,10 +218,10 @@ class Parser():
                train_sequences,   # sequences to train
                valid_sequences,   # sequences to validate.
                test_sequences,    # sequences to test (if none, don't get)
-               labels,            # labels in data
-               color_map,         # color for each label
-               learning_map,      # mapping for training labels
-               learning_map_inv,  # recover labels from xentropy
+               labels,            # labels in data 34classes
+               color_map,         # color for each label 34classes
+               learning_map,      # mapping for training labels 34->20
+               learning_map_inv,  # recover labels from xentropy 20->20/34
                sensor,            # sensor to use
                max_points,        # max points in each scan in entire dataset
                batch_size,        # batch size for train and val
@@ -247,7 +248,7 @@ class Parser():
 
     # number of classes that matters is the one for xentropy
     self.nclasses = len(self.learning_map_inv)
-    print(self.nclasses)
+    print(self.nclasses)  # 20
     # Data loading code
     if self.train_sequences:
         self.train_dataset = SemanticKitti(root=self.root,
