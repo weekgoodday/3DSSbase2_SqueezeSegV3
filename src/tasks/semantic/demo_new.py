@@ -15,15 +15,7 @@ from tasks.semantic.modules.trainer import *
 import pandas
 import argparse
 from tasks.semantic.dataset.kitti.parser import Parser
-def apply_dropout(m):
-  if type(m) == torch.nn.modules.dropout.Dropout2d or type(m) == nn.Dropout():
-    m.p=0.2
-    m.train()
-def h(a): # 直接*就可以 两个立方块对应相乘
-    b=torch.zeros(a.shape[1],a.shape[2])
-    b=-torch.sum(a*torch.log(a+1e-45),dim=0) #实测torch.log() 一旦小于1e-45就会算出inf 乘0就是 Nan
-    return b
-class Uncertainty():
+class Demo():
   def __init__(self, ARCH, DATA, datadir, logdir, modeldir,mode="valid_split"):
     # parameters
     self.ARCH = ARCH
@@ -72,8 +64,6 @@ class Uncertainty():
     # only valid set
     # zht:开启全部dropout已得到uncertainty
     self.model.eval()
-    self.model.apply(apply_dropout) # 确认是7个0.01的Dropout
-    T=10
     # empty the cache to infer in high res
     if self.gpu:
       torch.cuda.empty_cache()
@@ -93,24 +83,10 @@ class Uncertainty():
           proj_in = proj_in.cuda()
           proj_mask = proj_mask.cuda()
           p_x = p_x.cuda()
-          p_y = p_y.cuda()
-        # zht: 前传T次
-        proj_output_T=torch.zeros(T,self.parser.get_n_classes(),proj_in.shape[-2],proj_in.shape[-1]) #T次前传的概率向量 维度(T,20,64,2048)
-        proj_total=torch.zeros(T,proj_in.shape[-2],proj_in.shape[-1]) #T次前传的AU
-        for i in range(T):
-          proj_output, _, _, _, _ = self.model(proj_in, proj_mask)
-          proj_output_T[i,:]=proj_output
-          proj_total[i,:]=h(proj_output[0].cpu())
-        # zht: 计算熵
-        proj_output_mean=torch.mean(proj_output_T,dim=0) #torch.Size([20, 64, 2048])
-        Aleatoric_uncertainty=torch.mean(proj_total,dim=0)
-        Total_uncertainty=h(proj_output_mean)
-        Epistemic_uncertainty=Total_uncertainty-Aleatoric_uncertainty
-        proj_argmax = proj_output_mean.argmax(dim=0)
+
+        proj_output, _, _, _, _ = self.model(proj_in, proj_mask) #[1,20,64,2048]
+        proj_argmax = proj_output[0].argmax(dim=0)  # predict_label [64,2048] 
         # 关键：转变为原始点云
-        unproj_AU=Aleatoric_uncertainty[p_y,p_x]
-        unproj_EU=Epistemic_uncertainty[p_y,p_x]
-        unproj_output=proj_output_mean[:,p_y,p_x]
         unproj_argmax = proj_argmax[p_y,p_x] #zht 强制不开启KNN后处理
         if torch.cuda.is_available():
          torch.cuda.synchronize()
@@ -133,24 +109,6 @@ class Uncertainty():
         path2=os.path.join(self.logdir, "sequences",
                             path_seq, "predictions", path_name2)
         unproj_label.tofile(path2) #0-19的真值
-
-        unproj_output=unproj_output.cpu().numpy().reshape((20,-1)).T.astype(np.float32)
-        path_name3=path_name.split(".")[0]+".prob"
-        path3=os.path.join(self.logdir, "sequences",
-                            path_seq, "predictions", path_name3)
-        unproj_output.tofile(path3)
-
-        unproj_AU=unproj_AU.cpu().numpy().reshape((-1)).astype(np.float32)
-        path_name4=path_name.split(".")[0]+".au"
-        path4=os.path.join(self.logdir, "sequences",
-                            path_seq, "predictions", path_name4)
-        unproj_AU.tofile(path4)
-
-        unproj_EU=unproj_EU.cpu().numpy().reshape((-1)).astype(np.float32)
-        path_name5=path_name.split(".")[0]+".eu"
-        path5=os.path.join(self.logdir, "sequences",
-                            path_seq, "predictions", path_name5)
-        unproj_EU.tofile(path5)
       print("Finish infering")
         
 
@@ -165,7 +123,7 @@ if __name__ == '__main__':
   parser.add_argument(
       '--log', '-l',  # 选择预测结果存放路径
       type=str,
-      default=  '../../../uncertainty_output2/',
+      default=  '../../../predict_output/',
       help='Directory to put the predictions. Default: ~/logs/date+time'
   )
   parser.add_argument(
@@ -231,5 +189,5 @@ if __name__ == '__main__':
     print("model folder doesnt exist! Can't infer...")
     quit()
   # create user and infer dataset
-  user = Uncertainty(ARCH, DATA, FLAGS.dataset, FLAGS.log, FLAGS.model,mode)
+  user = Demo(ARCH, DATA, FLAGS.dataset, FLAGS.log, FLAGS.model,mode)
   user.infer()

@@ -7,7 +7,7 @@ python train.py --name train0-3
 预训练模型保存在/home/zht/github_play/SqueezeSegV3/pretrain
 训练完模型保存在/home/zht/logs/时间戳/...
 训练完模型用于点云分割任务方式： 
-1 只得到一个demo图片  (针对某一帧点云 就用demo.py得到label和uncertainty)
+1 只得到一个demo图片 
 cd ~/github_play/SqueezeSegV3/src/tasks/semantic/
 python demo.py -m /home/zht/github_play/SqueezeSegV3/pretrain/SSGV3-21
 2 预测一整个数据集label
@@ -16,5 +16,8 @@ python infer.py -d /home/zht/Datasets/Semantic -l /home/zht/github_play/SqueezeS
 3 在2的基础上可视化序列 （暂不知道怎么看见视频）
 python visualize.py -d /home/zht/Datasets/Semantic -p /home/zht/github_play/SqueezeSegV3/infer_output -s 00
 
-
-注意有.yaml文件split可改
+******以下为新增：
+预测任意数据集（输入是模型和放着bin文件的点云数据；输出是xxxxxx.pd 即每个点预测标签 xxxxxx.gt 即每个点真值） 
+python demo_new.py -m /home/zht/logs/2023-3-24-17:45
+计算dropout Uncertainty（输入是模型和放着bin文件的点云数据；输出是xxxxxx.pd 即每个点预测标签 xxxxxx.gt 即每个点真值 xxxxxx.au 即每个点的数据不确定性 xxxxxx.eu 即每个点模型不确定性 xxxxxx.prob即每个点20类的概率向量）
+python uncertainty.py -m /home/zht/logs/2023-3-24-17:45
