@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-# This file is covered by the LICENSE file in the root of this project.
+'''
+损失函数NLL 加的权重：各类出现频率，加的1e-4保证权重最高不过10000 ignore的类权重置0
+self.n_gpus self.multi_gpu 控制多gpu训练
+validate 会在log路径'CIoU_epoch_'+str(epoch)+'.npy'
+data处理在Parser
+模型构建在Segmentator 但是dropout rate在Arch文件
+'''
 
 import torch
 import torch.nn as nn
@@ -26,12 +32,10 @@ from common.sync_batchnorm.batchnorm import convert_model
 from common.warmupLR import *
 from tasks.semantic.modules.segmentator import *
 from tasks.semantic.modules.ioueval import *
-def set_dropout(m,p):
-  if type(m) == nn.Dropout2d:
-    m.p=p
-
+from tasks.semantic.dataset.kitti.parser import Parser
+wandb_log={}
 class Trainer():
-  def __init__(self, ARCH, DATA, datadir, logdir, path=None,wandb_open=False,p=0.01):  # logdir是~/logs/2023-xxx zht:p is dropout rate
+  def __init__(self, ARCH, DATA, datadir, logdir, path=None,wandb_open=False):  # logdir是~/logs/2023-xxx zht:p is dropout rate
     # parameters
     self.ARCH = ARCH
     self.DATA = DATA
@@ -39,25 +43,7 @@ class Trainer():
     self.log = logdir
     self.path = path
     self.wandb_open=wandb_open
-    # put logger where it belongs
-    # self.tb_logger = Logger(self.log + "/tb")
-    # self.info = {"train_update": 0,
-    #              "train_loss": 0,
-    #              "train_acc": 0,
-    #              "train_iou": 0,
-    #              "valid_loss": 0,
-    #              "valid_acc": 0,
-    #              "valid_iou": 0,
-    #              "backbone_lr": 0,
-    #              "decoder_lr": 0,
-    #              "head_lr": 0,
-    #              "post_lr": 0}
-    # 有了wandb不需要info
-    # get the data
-    parserModule = imp.load_source("parserModule",
-                                   '/home/zht/github_play/SqueezeSegV3/src/tasks/semantic/dataset/' +
-                                   self.DATA["name"] + '/parser.py')
-    self.parser = parserModule.Parser(root=self.datadir,
+    self.parser = Parser(root=self.datadir,
                                       train_sequences=self.DATA["split"]["train"], #split {'train': [0, 1, 2, 3, 4, 5, 6, 7, 9, 10], 'valid': [8], 'test': [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]}
                                       valid_sequences=self.DATA["split"]["valid"],
                                       test_sequences=None,
@@ -73,16 +59,14 @@ class Trainer():
                                       shuffle_train=True)
 
     # weights for loss (and bias)
-    # weights for loss (and bias)
     epsilon_w = self.ARCH["train"]["epsilon_w"]
     content = torch.zeros(self.parser.get_n_classes(), dtype=torch.float)
     for cl, freq in DATA["content"].items():
       x_cl = self.parser.to_xentropy(cl)  # map actual class to xentropy class
       content[x_cl] += freq
-    self.loss_w = 1 / (content + epsilon_w)   # get weights loss weights与该类别出现次数负相关
-    for x_cl, w in enumerate(self.loss_w):  # ignore the ones necessary to ignore  也是0类不影响loss
+    self.loss_w = 1 / (content + epsilon_w)   # get weights loss weights Negative correlation with the number of occurrences
+    for x_cl, w in enumerate(self.loss_w):  # ignore (class 0)
       if DATA["learning_ignore"][x_cl]:
-        # don't weigh
         self.loss_w[x_cl] = 0
     print("Loss weights from content: ", self.loss_w.data)
     # concatenate the encoder and the head
@@ -97,7 +81,7 @@ class Trainer():
     self.n_gpus = 0
     # zht: revise dropout rate
     self.model
-    self.model_single = self.model.apply(lambda x : set_dropout(x,p))
+    self.model_single = self.model
     self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("Training in device: ", self.device)
     if torch.cuda.is_available() and torch.cuda.device_count() > 0:
@@ -191,20 +175,6 @@ class Trainer():
 
   @staticmethod
   def save_to_log(logdir, img_summary=False, imgs=[]):
-  # def save_to_log(logdir, logger, info, epoch, w_summary=False, model=None, img_summary=False, imgs=[]):
-    # # save scalars
-    # for tag, value in info.items():
-    #   logger.scalar_summary(tag, value, epoch)
-
-    # # save summaries of weights and biases
-    # if w_summary and model:
-    #   for tag, value in model.named_parameters():
-    #     tag = tag.replace('.', '/')
-    #     logger.histo_summary(tag, value.data.cpu().numpy(), epoch)
-    #     if value.grad is not None:
-    #       logger.histo_summary(
-    #           tag + '/grad', value.grad.data.cpu().numpy(), epoch)
-
     if img_summary and len(imgs) > 0:
       directory = os.path.join(logdir, "predictions")
       if not os.path.isdir(directory):
@@ -227,13 +197,9 @@ class Trainer():
                              self.device, self.ignore_class)  # 评价IoU的时候也Ignore 0类
     if(self.wandb_open):
       wandb.watch(self.model)
-      wandb_log={}
+      
     # train for n epochs
     for epoch in range(self.ARCH["train"]["max_epochs"]):
-      # get info for learn rate currently 有了wandb不需要info
-      # groups = self.optimizer.param_groups
-      # for name, g in zip(self.lr_group_names, groups):
-      #   self.info[name] = g['lr']
 
       # train for 1 epoch
       acc, iou, loss, update_mean = self.train_epoch(train_loader=self.parser.get_train_set(),
@@ -247,18 +213,13 @@ class Trainer():
                                                      report=self.ARCH["train"]["report_batch"],
                                                      show_scans=self.ARCH["train"]["show_scans"])
 
-      # update info 有了wandb不需要info
-      # self.info["train_update"] = update_mean
-      # self.info["train_loss"] = loss
-      # self.info["train_acc"] = acc
-      # self.info["train_iou"] = iou
-      # zht:wandb
+      # wandb
       if(self.wandb_open):
       
         wandb_log["train_loss"]=loss
         wandb_log["train_acc"]=acc
         wandb_log["train_iou"]=iou
-        wandb_log["train_update"]=update_mean #update_mean 平均更新比率 貌似不如wandb.watch
+        wandb_log["train_update"]=update_mean #update_mean
       
       # remember best iou and save checkpoint
       if iou > best_train_iou:
@@ -275,7 +236,8 @@ class Trainer():
                                                  evaluator=self.evaluator,
                                                  class_func=self.parser.get_xentropy_class_string,
                                                  color_fn=self.parser.to_color, #通过label和color map的映射
-                                                 save_scans=self.ARCH["train"]["save_scans"])
+                                                 save_scans=self.ARCH["train"]["save_scans"],
+                                                 epoch=epoch)
 
         # update info 有了wandb不需要info
         # self.info["valid_loss"] = loss
@@ -362,7 +324,7 @@ class Trainer():
         evaluator.addBatch(argmax, proj_labels)
         accuracy = evaluator.getacc()
         jaccard, class_jaccard = evaluator.getIoU()
-      losses.update(loss.item(), in_vol.size(0))
+      losses.update(loss.item(), in_vol.size(0))  # in_vol [4,5,64,2048]
       acc.update(accuracy.item(), in_vol.size(0))
       iou.update(jaccard.item(), in_vol.size(0))
 
@@ -396,7 +358,7 @@ class Trainer():
         cv2.imshow("sample_training", out)
         cv2.waitKey(1)
 
-      if i % self.ARCH["train"]["report_batch"] == 0:
+      if i % self.ARCH["train"]["report_batch"] == 0: #every batch report
         print('Lr: {lr:.3e} | '
               'Update: {umean:.3e} mean,{ustd:.3e} std | '
               'Epoch: [{0}][{1}/{2}] | '
@@ -414,7 +376,7 @@ class Trainer():
 
     return acc.avg, iou.avg, losses.avg, update_ratio_meter.avg
 
-  def validate(self, val_loader, model, criterion, evaluator, class_func, color_fn, save_scans):
+  def validate(self, val_loader, model, criterion, evaluator, class_func, color_fn, save_scans, epoch):
     batch_time = AverageMeter()
     losses = AverageMeter()
     acc = AverageMeter()
@@ -440,7 +402,6 @@ class Trainer():
 
         [output, z2, z3, z4, z5] = model(in_vol, proj_mask)
         loss = criterion(torch.log(output.clamp(min=1e-8)), proj_labels)
-#
         argmax = output.argmax(dim=1)
         evaluator.addBatch(argmax, proj_labels)
         losses.update(loss.mean().item(), in_vol.size(0))
@@ -478,5 +439,11 @@ class Trainer():
       for i, jacc in enumerate(class_jaccard):
         print('IoU class {i:} [{class_str:}] = {jacc:.3f}'.format(
             i=i, class_str=class_func(i), jacc=jacc))
+        if(self.wandb_open):
+          wandb_log[class_func(i)]=jacc
+      IOUPATH=self.log+'IOU/'
+      if(not os.path.exists(IOUPATH)):
+          os.makedirs(IOUPATH)
+      np.save(IOUPATH+'CIoU_epoch_'+str(epoch)+'.npy',class_jaccard.cpu().numpy())
     
     return acc.avg, iou.avg, losses.avg, rand_imgs

@@ -76,7 +76,7 @@ class LaserScan:
 
     # put in attribute
     points = scan[:, 0:3]    # get xyz
-    remissions = scan[:, 3]  # get remission
+    remissions = scan[:, 3]  # get remission !!remission加线性映射处
     self.set_points(points, remissions)
 
   def set_points(self, points, remissions=None):

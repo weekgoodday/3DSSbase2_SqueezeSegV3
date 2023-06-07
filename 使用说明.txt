@@ -20,4 +20,7 @@ python visualize.py -d /home/zht/Datasets/Semantic -p /home/zht/github_play/Sque
 预测任意数据集（输入是模型和放着bin文件的点云数据；输出是xxxxxx.pd 即每个点预测标签 xxxxxx.gt 即每个点真值） 
 python demo_new.py -m /home/zht/logs/2023-3-24-17:45
 计算dropout Uncertainty（输入是模型和放着bin文件的点云数据；输出是xxxxxx.pd 即每个点预测标签 xxxxxx.gt 即每个点真值 xxxxxx.au 即每个点的数据不确定性 xxxxxx.eu 即每个点模型不确定性 xxxxxx.prob即每个点20类的概率向量）
-python uncertainty.py -m /home/zht/logs/2023-3-24-17:45
+python uncertainty_dropout.py -m /home/zht/logs/2023-3-24-17:45
+2023/05、05
+到/home/zht/github_play/SqueezeSegV3/src/common/laserscan.py 改线性映射反射率
+python tri_poss.py -m /home/zht/logs/2023-4-11-21:42 -d /home/zht/Datasets/Semantic/73/ -l /home/zht/github_play/SqueezeSegV3/poss_73

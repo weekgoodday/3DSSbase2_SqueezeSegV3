@@ -1,5 +1,28 @@
 #!/usr/bin/env python3
-# This file is covered by the LICENSE file in the root of this project.
+'''
+因为log是按时间命名，不会覆盖，大胆训练
+
+输入
+必须：
+
+可选：
+使用的数据集路径 默认 -d /home/zht/Datasets/Semantic
+使用的模型配置文件，训练超参，batchsize,dropout_rate 默认 -ac config/arch/SSGV321.yaml
+使用的数据配置文件，决定分几类和用哪些sequence训练，需要改split:train,valid,test 默认 -dc config/labels/semantic-kitti_11class.yaml
+name of the experiment，如果有会有wandb记录训练过程 默认 -n None
+log，模型会保存在这里 默认 -l ~/logs/date+time
+
+几乎不用：
+pretrained 默认 -p None
+
+输出
+在log路径保存 checkpoint 5个head+backbone+decoder 包括训练集上最好的和测试集上最好的
+IOU文件夹保存每代验证集IOU CIoU_epoch_0.npy 直接data=np.load(path) [12,]
+predictions文件夹是rangeview图片
+
+运行方式：
+python train.py -n test
+'''
 
 import argparse
 import subprocess
@@ -30,14 +53,14 @@ if __name__ == '__main__':
       '--arch_cfg', '-ac',
       type=str,
       #required=True,
-      default='/home/zht/github_play/SqueezeSegV3/src/tasks/semantic/config/arch/SSGV321.yaml',
+      default='config/arch/SSGV321.yaml',
       help='Architecture yaml cfg file. See /config/arch for sample. No default!',
   )
   parser.add_argument(
       '--data_cfg', '-dc',
       type=str,
       required=False,
-      default='/home/zht/github_play/SqueezeSegV3/src/tasks/semantic/config/labels/semantic-kitti.yaml',
+      default='/home/zht/github_play/SqueezeSegV3/src/tasks/semantic/config/labels/semantic-kitti_11class.yaml',
       help='Classification yaml cfg file. See /config/labels for sample. No default!',
   )
   parser.add_argument(
@@ -55,19 +78,19 @@ if __name__ == '__main__':
       help='Directory to get the pretrained model. If not passed, do from scratch!'
   )
   parser.add_argument(
-      '--name', 
+      '--name', '-n',
       type=str,
       required=False,
       default=None,
       help='wandbname if not None, use wandb'
   )
-  parser.add_argument(
-      '--dropout_rate',
-      type=float,
-      default=0.01,
-      #required=True,
-      help='if change dropout rate to train, use this parameter',
-  )
+  # parser.add_argument(
+  #     '--dropout_rate',
+  #     type=float,
+  #     default=0.01,
+  #     #required=True,
+  #     help='if change dropout rate to train, use this parameter',
+  # )
   FLAGS, unparsed = parser.parse_known_args()
   wandb_open=False
   if(FLAGS.name != None):
@@ -132,5 +155,5 @@ if __name__ == '__main__':
   if(wandb_open):
     wandb.init(project="my_ssv3_project",name=FLAGS.name)
   # # create trainer and start the training
-  trainer = Trainer(ARCH, DATA, FLAGS.dataset, FLAGS.log, FLAGS.pretrained,wandb_open,FLAGS.dropout_rate)
+  trainer = Trainer(ARCH, DATA, FLAGS.dataset, FLAGS.log, FLAGS.pretrained, wandb_open)
   trainer.train()

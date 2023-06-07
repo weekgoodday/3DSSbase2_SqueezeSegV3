@@ -2,3 +2,5 @@ __pycache__/
 wandb/
 pretrain/*
 *output*/
+poss*/
+forward_once.py

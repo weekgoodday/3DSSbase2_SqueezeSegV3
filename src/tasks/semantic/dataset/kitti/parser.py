@@ -95,7 +95,6 @@ class SemanticKitti(Dataset):
       # check all scans have labels
       if self.gt:
         assert(len(scan_files) == len(label_files))
-
       # extend list
       self.scan_files.extend(scan_files)
       self.label_files.extend(label_files)
@@ -130,7 +129,7 @@ class SemanticKitti(Dataset):
                        fov_down=self.sensor_fov_down)
 
     # open and obtain scan
-    scan.open_scan(scan_file)
+    scan.open_scan(scan_file)  # ！！进到里面给remission加线性映射
     if self.gt:
       scan.open_label(label_file)
       # map unused classes to used classes (also for projection)
@@ -248,7 +247,7 @@ class Parser():
 
     # number of classes that matters is the one for xentropy
     self.nclasses = len(self.learning_map_inv)
-    print(self.nclasses)  # 20
+    print(self.nclasses)  # 20->11
     # Data loading code
     if self.train_sequences:
         self.train_dataset = SemanticKitti(root=self.root,

@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 '''
+其实和uncertainty_dropout.py一样，只是测试集是poss，因此数据配置文件变成semantic-poss-new.yaml
 输入
 必须：
 训练好的模型路径 e.g. -m /home/zht/logs/2023-4-11-21:42
-结果存放的路径 e.g. -l /home/zht/github_play/SqueezeSegV3/outputseq8
-使用的数据集路径 e.g. -d /home/zht/Datasets/Semantic_s8/
+结果存放的路径 e.g. -l /home/zht/github_play/SqueezeSegV3/poss_73
+使用的数据集路径，73是poss的验证集 e.g. -d /home/zht/Datasets/Semantic/73/ 这里最后一个//里需要是一个数字 Parser需要sequence传入
 
 可选：
-使用的序列，需与数据集路径匹配 e.g. -s 08
 计算不确定性时的dropout rate e.g. -dr 0.2
 
 输出
@@ -24,12 +24,8 @@ uc=np.fromfile(path,dtype=np.float32)
 prob=np.fromfile(path,dtype=np.float32).reshape(12,-1)
 
 运行方式：
-python uncertainty_dropout.py -m /home/zht/logs/2023-4-11-21:42 -d /home/zht/Datasets/Semantic_s8/ -l /home/zht/github_play/SqueezeSegV3/outputseq8
-
-其它：
-数据、模型配置文件和模型checkpoint在同一个文件夹下
+python tri_poss.py -m /home/zht/logs/2023-4-11-21:42 -d /home/zht/Datasets/Semantic/73/ -l /home/zht/github_play/SqueezeSegV3/poss_73
 '''
-
 import torch
 import torch.nn as nn
 import torch.backends.cudnn as cudnn
@@ -41,38 +37,29 @@ sys.path.append("..")
 sys.path.append("../..") 
 from tasks.semantic.modules.segmentator import *
 from tasks.semantic.modules.trainer import *
-import pandas
 import argparse
 from tasks.semantic.dataset.kitti.parser import Parser
 
-# def apply_dropout(m):
+# def close_dropout(m):
 #   if type(m) == torch.nn.modules.dropout.Dropout2d or type(m) == nn.Dropout:
-#     m.train()
-def h(a): # 直接*就可以 两个立方块对应相乘
+#     m.eval()
+def h(a): # just *, two tensor cubes multiply accordingly (直接*就可以 两个立方块对应相乘)
     b=torch.zeros(a.shape[1],a.shape[2])
-    b=-torch.sum(a*torch.log(a+1e-45),dim=0) #实测torch.log() 一旦小于1e-45就会算出inf 乘0就是 Nan
+    b=-torch.sum(a*torch.log(a+1e-45),dim=0) #1e-45 because torch.log() when input lower than 1e-45 will calculate inf (实测torch.log() 一旦小于1e-45就会算出inf 乘0就是 Nan)
     return b
 class Uncertainty():
-  def __init__(self, ARCH, DATA, datadir, logdir, modeldir, dropout_rate=0.2, using_sequences=['08'], T_forward=10):
-    '''
-    本代码通过开启Dropout，多次前传通过期望熵的集成模型方式计算数据不确定性(data / epistemic uncertainty)和模型不确定性(model / aleatoric uncertainty)
-
-    dropout_rate: 测试时开启的dropout rate，建议0.2别改，因为训练的时候就是0.2
-    using_sequences: 用作测试（计算uncertainty）的序列
-    T_forward: dropout前传次数
-    '''
+  def __init__(self, ARCH, DATA, datadir, logdir, modeldir,dropout_rate=0.2):
     # parameters
     self.ARCH = ARCH
     self.DATA = DATA
-    self.datadir = datadir
+    self.datadir = '/'.join(datadir.split('/')[:-2])+'/'  # datadir 要取到seq前 这样在parser遍历的时候+seq才行 因为本来是把seq写在yaml里的
     self.logdir = logdir
     self.modeldir = modeldir
     self.dropout_rate=dropout_rate
-    self.T_forward=T_forward
-    self.using_sequences=using_sequences
+    using_sequences=[datadir.split('/')[-2]]
     self.parser = Parser(root=self.datadir,
                           train_sequences=None,
-                          valid_sequences=self.using_sequences,
+                          valid_sequences=using_sequences,
                           test_sequences=None,
                           labels=self.DATA["labels"],
                           color_map=self.DATA["color_map"],
@@ -103,19 +90,19 @@ class Uncertainty():
 
   def infer(self):
     # only valid set
-    # zht:开启 全连接层的dropout以得到uncertainty
-    self.model.eval()
-    # self.model.apply(apply_dropout)
-    # 仅开启head5的dropout
+    # dataset transfer, open batchnorm may get better result
+    self.model.train()
+    # self.model.eval()
+    # self.model.apply(close_dropout)
     for child in self.model.named_children():
       if(child[0]=='head5'):
         for m in child[1].children():
           if(type(m)==torch.nn.modules.Dropout2d):
             m.p=self.dropout_rate
             m.train()
-    # self.model.apply(apply_dropout) # 确认是7个0.01的Dropout
+    # self.model.apply(apply_dropout) # 7 0.01 Dropout layers
 
-    T=self.T_forward
+    T=10
     # empty the cache to infer in high res
     if self.gpu:
       torch.cuda.empty_cache()
@@ -136,25 +123,25 @@ class Uncertainty():
           proj_mask = proj_mask.cuda()
           p_x = p_x.cuda()
           p_y = p_y.cuda()
-        # zht: 前传T次
+        #forward T times
         num_class=self.parser.get_n_classes()
-        proj_output_T=torch.zeros(T,num_class,proj_in.shape[-2],proj_in.shape[-1]) #T次前传的概率向量 维度(T,20,64,2048)
-        proj_total=torch.zeros(T,proj_in.shape[-2],proj_in.shape[-1]) #T次前传的AU
+        proj_output_T=torch.zeros(T,num_class,proj_in.shape[-2],proj_in.shape[-1]) #T forward probs (T,20,64,2048)
+        proj_total=torch.zeros(T,proj_in.shape[-2],proj_in.shape[-1]) #T forward AU
         for i in range(T):
           proj_output, _, _, _, _ = self.model(proj_in, proj_mask)
           proj_output_T[i,:]=proj_output
           proj_total[i,:]=h(proj_output[0].cpu())
-        # zht: 计算熵
+        # calculate entropy
         proj_output_mean=torch.mean(proj_output_T,dim=0) #torch.Size([20, 64, 2048])
         Aleatoric_uncertainty=torch.mean(proj_total,dim=0)
         Total_uncertainty=h(proj_output_mean)
         Epistemic_uncertainty=Total_uncertainty-Aleatoric_uncertainty
         proj_argmax = proj_output_mean.argmax(dim=0)
-        # 关键：转变为原始点云
+        # change to origin points
         unproj_AU=Aleatoric_uncertainty[p_y,p_x]
         unproj_EU=Epistemic_uncertainty[p_y,p_x]
         unproj_output=proj_output_mean[:,p_y,p_x]
-        unproj_argmax = proj_argmax[p_y,p_x] #zht 强制不开启KNN后处理
+        unproj_argmax = proj_argmax[p_y,p_x] #force to close knn
         if torch.cuda.is_available():
          torch.cuda.synchronize()
         print("Infered seq", path_seq, "scan", path_name,"in", time.time() - end, "sec")
@@ -171,14 +158,12 @@ class Uncertainty():
                             path_seq, "predictions", path_name1)
         pred_np.tofile(path1)
 
-        # unproj_label=unproj_label.cpu().numpy().reshape((-1)).astype(np.int32)
         path_name2=path_name.split(".")[0]+".gt"
         path2=os.path.join(self.logdir, "sequences",
                             path_seq, "predictions", path_name2)
-        # unproj_label.tofile(path2) #0-19的真值
         unproj_labels[0,:npoints].cpu().numpy().astype(np.int32).tofile(path2)
 
-        unproj_output=unproj_output.cpu().numpy().reshape((num_class,-1)).astype(np.float32)  # [12,N]
+        unproj_output=unproj_output.cpu().numpy().reshape((num_class,-1)).astype(np.float32)  # .T变成[N,12]了 是不对的！
         path_name3=path_name.split(".")[0]+".prob"
         path3=os.path.join(self.logdir, "sequences",
                             path_seq, "predictions", path_name3)
@@ -200,14 +185,14 @@ class Uncertainty():
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser("./demo.py")
-  parser.add_argument(  # 可以考虑换sample /home/zht/Datasets/Semantic_sample
+  parser.add_argument(  
       '--dataset', '-d',
       type=str,
-      default = "/home/zht/Datasets/Semantic_sample/", 
+      default = "/home/zht/Datasets/Semantic/73/", 
       help='Dataset to sample'
   )
   parser.add_argument(
-      '--log', '-l',  # 选择预测结果存放路径
+      '--log', '-l',  
       type=str,
       default=  '../../../uncertainty_output_/',
       help='Directory to put the predictions. Default: ~/logs/date+time'
@@ -220,15 +205,11 @@ if __name__ == '__main__':
       help='Directory to get the trained model.'
   )
   parser.add_argument(
-    '--dropout_rate', '-dr',
+    '--dropout_rate',
     type=float,
     default=0.2
   )
-  parser.add_argument(
-    '--using_sequences',
-    type=str,
-    default='08'
-  )
+ 
   FLAGS, unparsed = parser.parse_known_args()
   # print summary of what we will do
   print("----------")
@@ -238,17 +219,9 @@ if __name__ == '__main__':
   print("model", FLAGS.model)
   print("----------\n")
 
-
-  try:
-    print("Opening arch config file from %s" % FLAGS.model)
-    ARCH = yaml.safe_load(open(FLAGS.model + "/arch_cfg.yaml", 'r'))
-    print("Opening data config file from %s" % FLAGS.model)
-    DATA = yaml.safe_load(open(FLAGS.model + "/data_cfg.yaml", 'r'))
-  except Exception as e:
-    print(e)
-    print("Error opening yaml file in the !! pretrain model directory!!")
-    quit()
-  using_sequences=[FLAGS.using_sequences]
+  ARCH = yaml.safe_load(open("/home/zht/github_play/SqueezeSegV3/src/tasks/semantic/config/arch/SSGV321.yaml","r"))
+  DATA = yaml.safe_load(open("/home/zht/github_play/3DSSbase1/config/label_mapping/semantic-poss-new.yaml","r"))
+  using_sequences=[FLAGS.dataset.split("/")[-2]]
   # create log folder
   try:
     if not os.path.exists(FLAGS.log):

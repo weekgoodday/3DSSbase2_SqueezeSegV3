@@ -14,7 +14,7 @@ class Segmentator(nn.Module):
   def __init__(self, ARCH, nclasses, path=None, path_append="", strict=False):
     super().__init__()
     self.ARCH = ARCH
-    self.nclasses = 20
+    self.nclasses = nclasses
     self.path = path #path是pretrained_path 可以是None 也可以是包含了Backbone segmentation_decoder segmentation_head12345的五路径 save_checkpoint正好完成了存储过程 所以训练完后找logs就可以接续
     self.path_append = path_append
     self.strict = False
@@ -66,7 +66,7 @@ class Segmentator(nn.Module):
                               nn.Conv2d(64,
                                         self.nclasses, kernel_size=1,
                                         stride=1, padding=0))
-    self.head5 = nn.Sequential(nn.Dropout2d(p=ARCH["head"]["dropout"]),
+    self.head5 = nn.Sequential(nn.Dropout2d(p=0.2),#nn.Dropout2d(p=ARCH["head"]["dropout"]),
                               nn.Conv2d(32,
                                         self.nclasses, kernel_size=3,
                                         stride=1, padding=1))

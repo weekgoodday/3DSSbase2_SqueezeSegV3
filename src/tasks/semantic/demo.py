@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 # This file is covered by the LICENSE file in the root of this project.
 # import sys
@@ -14,7 +13,7 @@ import os
 import shutil
 import __init__ as booger
 print(os.path.abspath("./"))
-from tasks.semantic.modules.demo_user import *
+from github_play.SqueezeSegV3.src.tasks.semantic.modules.demo_user_changed import *
 
 
 if __name__ == '__main__':
